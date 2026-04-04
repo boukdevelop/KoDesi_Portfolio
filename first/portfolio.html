@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoukaLab | L'esthétique codée</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        lab: {
+                            bg: '#0B0C10',
+                            surface: '#1F2833',
+                            cyber: '#C5CBE3', // Light text
+                            lime: '#c0ff00',  // Cyber Lime
+                            cyan: '#45A29E',  // Tech Cyan
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Custom Styling for the "Chill & Tech" vibe */
+        body {
+            background-color: #0B0C10;
+            color: #C5CBE3;
+            overflow-x: hidden;
+            cursor: none; /* Hide default cursor for custom one */
+        }
+
+        /* Custom Cursor */
+        @media (pointer: fine) {
+            .custom-cursor {
+                width: 20px;
+                height: 20px;
+                border: 2px solid #c0ff00;
+                border-radius: 50%;
+                position: fixed;
+                pointer-events: none;
+                z-index: 9999;
+                transform: translate(-50%, -50%);
+                transition: width 0.2s, height 0.2s, background-color 0.2s;
+            }
+            .custom-cursor.hover {
+                width: 40px;
+                height: 40px;
+                background-color: rgba(192, 255, 0, 0.1);
+            }
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(31, 40, 51, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 203, 227, 0.1);
+        }
+
+        /* Grid Background Pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, transparent, black, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black, transparent);
+        }
+
+        /* Hide scrollbar but keep functionality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0C10; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2833; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #45A29E; 
+        }
+
+        /* Reveal Animation for Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-lab-lime selection:text-lab-bg">
+
+    <!-- Custom Cursor Element -->
+    <div class="custom-cursor hidden md:block" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display font-bold text-2xl tracking-tight text-white flex items-center gap-2 hover-target">
+                BoukaLab<span class="text-lab-lime animate-pulse">_</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-mono text-sm">
+                <a href="#manifesto" class="hover:text-lab-lime transition-colors hover-target">// Manifesto</a>
+                <a href="#reports" class="hover:text-lab-lime transition-colors hover-target">// Rapports</a>
+                <a href="#toolbox" class="hover:text-lab-lime transition-colors hover-target">// Stack</a>
+                <a href="#alchimiste" class="hover:text-lab-lime transition-colors hover-target">// L'Alchimiste</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 border border-lab-lime text-lab-lime font-mono text-sm hover:bg-lab-lime hover:text-lab-bg transition-all hover-target rounded-sm">
+                Initier(Projet)
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-grid opacity-30 pointer-events-none"></div>
+        
+        <!-- Glow effects -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-lab-cyan rounded-full mix-blend-screen filter blur-[128px] opacity-20 animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-lab-lime rounded-full mix-blend-screen filter blur-[128px] opacity-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border-lab-lime/30 text-lab-lime font-mono text-xs mb-6">
+                    <span class="w-2 h-2 rounded-full bg-lab-lime animate-pulse"></span>
+                    System.Status: Online & Ready
+                </div>
+                <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
+                    L'esthétique <span class="text-transparent bg-clip-text bg-gradient-to-r from-lab-lime to-lab-cyan">codée</span>.<br>
+                    Le pixel <span class="text-transparent bg-clip-text bg-gradient-to-r from-lab-cyan to-lab-lime">sculpté</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-lab-cyber/80 max-w-lg mb-8 font-light">
+                    Studio de création hybride fusionnant le design graphique stratégique et le développement web de haute précision.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#reports" class="px-8 py-3 bg-white text-lab-bg font-bold font-display hover:bg-lab-lime transition-colors hover-target rounded-sm">
+                        Découvrir les expériences
+                    </a>
+                    <a href="https://github.com" target="_blank" class="px-8 py-3 glass text-white font-mono hover:border-lab-cyan transition-colors hover-target rounded-sm flex items-center gap-2">
+                        <i class="ph ph-github-logo text-xl"></i> GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terminal Window Animation -->
+            <div class="glass rounded-lg overflow-hidden border border-lab-cyan/20 shadow-2xl animate-float">
+                <div class="bg-lab-surface/80 px-4 py-3 flex items-center gap-2 border-b border-lab-cyan/10">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="ml-4 font-mono text-xs text-lab-cyber/50">boukalab@server:~</span>
+                </div>
+                <div class="p-6 font-mono text-sm md:text-base h-64 overflow-y-auto">
+                    <div id="typewriter" class="text-lab-lime"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="py-24 bg-lab-bg relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-4">Là où le Pixel rencontre la Syntaxe.</h2>
+                <p class="text-lab-cyber/70 max-w-2xl mx-auto">Avoir un interlocuteur unique qui maîtrise l'outil de conception et le compilateur. C'est la garantie d'une vision respectée au millimètre.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 reveal">
+                <!-- Design Card -->
+                <div class="glass p-8 rounded-xl border border-lab-surface hover:border-lab-cyan/50 transition-colors group">
+                    <div class="w-14 h-14 rounded-lg bg-lab-cyan/10 flex items-center justify-center mb-6 text-lab-cyan group-hover:scale-110 transition-transform">
+                        <i class="ph ph-bezier-curve text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-3">Le Design avec une intention</h3>
+                    <p class="text-lab-cyber/70">Création d'identités visuelles mémorables, de logos percutants et d'interfaces utilisateur (UI/UX) pensées pour l'humain avant tout. L'esthétique au service de votre stratégie.</p>
+                </div>
+
+                <!-- Code Card -->
+                <div class="glass p-8 rounded-xl border border-lab-surface hover:border-lab-lime/50 transition-colors group">
+                    <div class="w-14 h-14 rounded-lg bg-lab-lime/10 flex items-center justify-center mb-6 text-lab-lime group-hover:scale-110 transition-transform">
+                        <i class="ph ph-code-block text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-3">Le Code avec une âme</h3>
+                    <p class="text-lab-cyber/70">Développement d'applications web fluides, rapides et parfaitement structurées. L'architecture technique est conçue pour être aussi élégante que l'interface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Lab Reports (Projects) -->
+    <section id="reports" class="py-24 bg-lab-surface/30 relative z-10 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 flex justify-between items-end reveal">
+                <div>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-2">Expérimentations & Solutions.</h2>
+                    <p class="text-lab-cyber/70 font-mono text-sm">// Rapports de labo sélectionnés</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="group relative rounded-xl overflow-hidden glass border border-lab-surface reveal hover-target">
+                    <!-- Project Image (Mockup) -->
+                    <div class="aspect-video bg-lab-surface relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-lab-cyan/20 to-transparent"></div>
+                        <i class="ph ph-image text-6xl text-lab-cyber/20"></i>
+                        <span class="absolute bottom-4 right-4 font-mono text-xs text-lab-cyber/40">[Image of App Interface]</span>
+                        
+                        <!-- The Code Reveal Overlay (The "Chill Tech" effect) -->
+                        <div class="absolute inset-0 bg-lab-bg/95 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-center">
+                            <p class="font-mono text-xs text-lab-cyan mb-2">// Composant React : Header.jsx</p>
+                            <pre class="font-mono text-sm text-lab-cyber/80 overflow-hidden">
+<span class="text-pink-400">export default function</span> <span class="text-yellow-200">Header</span>() {
+  <span class="text-pink-400">return</span> (
+    &lt;<span class="text-blue-300">header</span> <span class="text-green-300">className</span>=<span class="text-yellow-300">"glass-nav"</span>&gt;
+      &lt;<span class="text-blue-300">Logo</span> /&gt;
+      &lt;<span class="text-blue-300">Navigation</span> <span class="text-green-300">variant</span>=<span class="text-yellow-300">"dark"</span> /&gt;
+    &lt;/<span class="text-blue-300">header</span>&gt;
+  );
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs font-mono text-lab-lime">UI/UX</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs font-mono text-lab-cyan">React</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-2">Refonte Dashboard Fintech</h3>
+                        <p class="text-sm text-lab-cyber/70 mb-4">Design d'une interface complexe et intégration pixel-perfect avec Tailwind CSS et React.</p>
+                        <a href="#" class="text-white text-sm font-bold flex items-center gap-2 group-hover:text-lab-lime transition-colors">
+                            Voir le projet <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative rounded-xl overflow-hidden glass border border-lab-surface reveal hover-target" style="transition-delay: 100ms;">
+                    <div class="aspect-video bg-lab-surface relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-lab-lime/20 to-transparent"></div>
+                        <i class="ph ph-image text-6xl text-lab-cyber/20"></i>
+                        <span class="absolute bottom-4 right-4 font-mono text-xs text-lab-cyber/40">[Image of Brand Identity]</span>
+                        
+                        <!-- The Code Reveal Overlay -->
+                        <div class="absolute inset-0 bg-lab-bg/95 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-center">
+                            <p class="font-mono text-xs text-lab-lime mb-2">/* Style Vectoriel : logo.css */</p>
+                            <pre class="font-mono text-sm text-lab-cyber/80 overflow-hidden">
+<span class="text-blue-300">.brand-mark</span> {
+  <span class="text-pink-400">fill</span>: <span class="text-yellow-300">transparent</span>;
+  <span class="text-pink-400">stroke</span>: <span class="text-yellow-300">#c0ff00</span>;
+  <span class="text-pink-400">stroke-width</span>: <span class="text-purple-300">2px</span>;
+  <span class="text-pink-400">animation</span>: <span class="text-yellow-300">draw 2s ease-out</span>;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs font-mono text-white">Branding</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-xs font-mono text-lab-cyan">GSAP</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-2">Identité Visuelle "Nova"</h3>
+                        <p class="text-sm text-lab-cyber/70 mb-4">Création complète du logo, de la charte graphique et d'une landing page interactive avec animations SVG.</p>
+                        <a href="#" class="text-white text-sm font-bold flex items-center gap-2 group-hover:text-lab-lime transition-colors">
+                            Voir le projet <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toolbox Section -->
+    <section id="toolbox" class="py-24 bg-lab-bg relative z-10">
+        <div class="max-w-7xl mx-auto px-6 text-center reveal">
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-4">Composants du Labo.</h2>
+            <p class="text-lab-cyber/70 mb-12 max-w-2xl mx-auto">La stack technique et créative utilisée pour transformer des idées abstraites en produits numériques tangibles.</p>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto text-left">
+                <!-- Design Stack -->
+                <div class="glass p-8 rounded-xl border border-lab-surface">
+                    <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                        <i class="ph ph-palette text-2xl text-lab-lime"></i>
+                        <h3 class="font-mono text-lg text-white">Creative_Stack</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-medium hover:bg-white hover:text-lab-bg transition-colors cursor-default">Figma</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-medium hover:bg-white hover:text-lab-bg transition-colors cursor-default">Adobe Illustrator</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-medium hover:bg-white hover:text-lab-bg transition-colors cursor-default">Photoshop</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-medium hover:bg-white hover:text-lab-bg transition-colors cursor-default">UI/UX Research</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-medium hover:bg-white hover:text-lab-bg transition-colors cursor-default">Brand Strategy</span>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="glass p-8 rounded-xl border border-lab-surface">
+                    <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                        <i class="ph ph-terminal-window text-2xl text-lab-cyan"></i>
+                        <h3 class="font-mono text-lg text-white">Tech_Stack</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-mono hover:bg-lab-cyan hover:text-lab-bg transition-colors cursor-default">HTML/CSS</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-mono hover:bg-lab-cyan hover:text-lab-bg transition-colors cursor-default">JavaScript (ES6+)</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-mono hover:bg-lab-cyan hover:text-lab-bg transition-colors cursor-default">React.js</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-mono hover:bg-lab-cyan hover:text-lab-bg transition-colors cursor-default">Tailwind CSS</span>
+                        <span class="px-4 py-2 bg-lab-surface text-lab-cyber rounded-full text-sm font-mono hover:bg-lab-cyan hover:text-lab-bg transition-colors cursor-default">Git / GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="alchimiste" class="py-24 bg-lab-surface/30 relative z-10 border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-5 gap-12 items-center reveal">
+                <div class="md:col-span-2 relative">
+                    <div class="aspect-square rounded-2xl overflow-hidden glass p-2 filter grayscale hover:grayscale-0 transition-all duration-500">
+                        <div class="w-full h-full bg-lab-surface rounded-xl flex items-center justify-center relative overflow-hidden">
+                            <!-- Placeholder for Profile Picture -->
+                            <i class="ph ph-user-focus text-6xl text-lab-cyber/20"></i>
+                            <span class="absolute bottom-4 font-mono text-xs text-lab-cyber/40">[Image de Franck]</span>
+                        </div>
+                    </div>
+                    <!-- Decor element -->
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 border border-lab-lime/50 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                        <span class="font-mono text-xs text-lab-lime">BoukaLab*</span>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-2">L'Alchimiste derrière l'écran.</h2>
+                    <p class="text-lab-lime font-mono text-sm mb-6">// Franck Gabriel Boukala Bonoko</p>
+                    
+                    <div class="space-y-4 text-lab-cyber/80 font-light leading-relaxed">
+                        <p>
+                            Je suis un développeur web et graphic designer freelance. Ma mission ? Transformer le chaos abstrait des idées en interfaces claires, esthétiques et fonctionnelles.
+                        </p>
+                        <p>
+                            Fondateur de <strong>BoukaLab</strong>, je crois fermement que le design et le code ne doivent pas vivre en silos. Le meilleur design est celui qui est parfaitement intégrable, et le meilleur code est celui qui sert une expérience utilisateur sans friction.
+                        </p>
+                        <p>
+                            Que ce soit pour sculpter un logo vectoriel ou structurer la logique d'une application React, mon approche reste la même : la précision, l'innovation, et une touche de "chill" pour que le processus créatif reste un plaisir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section id="contact" class="py-24 bg-lab-bg relative z-10 border-t border-white/5 overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 bg-grid opacity-10 pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/5 text-white mb-8">
+                <i class="ph ph-paper-plane-tilt text-3xl"></i>
+            </div>
+            <h2 class="font-display text-4xl md:text-6xl font-bold text-white mb-6">Prêt à injecter de l'innovation ?</h2>
+            <p class="text-lab-cyber/70 text-lg mb-10 max-w-xl mx-auto">
+                Le labo est ouvert pour de nouvelles collaborations. Parlez-moi de votre projet, de vos idées, ou venez juste dire bonjour.
+            </p>
+            
+            <a href="mailto:hello@boukalab.com" class="inline-flex items-center gap-3 px-8 py-4 bg-lab-lime text-lab-bg font-bold font-display text-lg hover:bg-white transition-colors hover-target rounded-sm">
+                Lancer la séquence de contact <i class="ph ph-arrow-right"></i>
+            </a>
+        </div>
+
+        <footer class="mt-24 border-t border-white/10 pt-8 pb-4">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-mono text-lab-cyber/50">
+                <p>&copy; 2026 BoukaLab. L'esthétique codée.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-lab-lime transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-lab-lime transition-colors">GitHub</a>
+                    <a href="#" class="hover:text-lab-lime transition-colors">Behance</a>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const hoverTargets = document.querySelectorAll('.hover-target, a, button');
+
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            hoverTargets.forEach(target => {
+                target.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                target.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+
+        // Navbar blur effect on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-lab-bg/80');
+                navbar.classList.remove('border-b-0');
+                navbar.classList.add('border-b', 'border-white/10');
+            } else {
+                navbar.classList.remove('bg-lab-bg/80', 'border-b', 'border-white/10');
+                navbar.classList.add('border-b-0');
+            }
+        });
+
+        // Typewriter Effect for Terminal
+        const twElement = document.getElementById('typewriter');
+        const lines = [
+            "> Initializing BoukaLab Core...",
+            "> Loading Graphic Assets...... [OK]",
+            "> Compiling Logic............. [OK]",
+            "> Connecting to Server........ [OK]",
+            " ",
+            "Welcome to BoukaLab CLI.",
+            "Type 'help' to see available commands.",
+            " ",
+            "user@guest:~$ ./run_portfolio.sh",
+            "Executing sequence...",
+            "Status: Awaiting your project."
+        ];
+        
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (lineIndex < lines.length) {
+                if (charIndex < lines[lineIndex].length) {
+                    twElement.innerHTML += lines[lineIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, Math.random() * 50 + 20); // Random typing speed
+                } else {
+                    twElement.innerHTML += "<br>";
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeWriter, 400); // Pause between lines
+                }
+            } else {
+                // Add blinking cursor at the end
+                twElement.innerHTML += '<span class="animate-pulse">_</span>';
+            }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeWriter, 1000);
+
+        // Scroll Reveal Animation via Intersection Observer
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        };
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

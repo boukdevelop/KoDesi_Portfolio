@@ -1,0 +1,180 @@
+/* On cache le bouton hamburger sur PC */
+.hamburger {
+    display: none; 
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001; /* Très important : le bouton doit rester au-dessus du menu */
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 8px auto;
+    background-color: var(--text); /* Utilise ta variable ou une couleur claire */
+    transition: all 0.3s ease-in-out;
+}
+
+/* =========================================
+   STYLE MOBILE (Tablettes et Téléphones)
+========================================= */
+@media (max-width: 971px) {
+    /* 1. On affiche le bouton Hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* 3. On transforme le menu en panneau latéral futuriste */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Caché hors écran à droite */
+        width: 60%; /* Le menu prend 60% de l'écran */
+        height: 60vh;
+        background: linear-gradient(60deg, var(--blue), var(--orange)); /* Ton bleu avec de la transparence */
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px); /* L'effet verre dépoli */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); /* Animation fluide */
+        z-index: 1000;
+        border-radius: 80px;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5); /* Ombre pour détacher le menu du fond */
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Les liens s'empilent */
+        gap: 40px;
+        text-align: center;
+    }
+
+    /* 4. LA CLASSE MAGIQUE (ajoutée par le JS) */
+    .nav-menu.active {
+        right: 0; /* Le menu glisse vers la gauche pour apparaître */
+    }
+
+    /* 5. Animation du Hamburger en Croix (X) */
+    .hamburger.is-active .bar:nth-child(2) { 
+        opacity: 0; /* La barre du milieu disparaît */
+    }
+    .hamburger.is-active .bar:nth-child(1) { 
+        transform: translateY(8px) rotate(45deg); /* Barre du haut s'incline */
+    }
+    .hamburger.is-active .bar:nth-child(3) { 
+        transform: translateY(-8px) rotate(-45deg); /* Barre du bas s'incline */
+    }
+
+
+    /* ==========================
+    PAGE ACCEUIL (index.html)
+    ========================== */
+
+    #index {
+        /* display: flex; */
+        flex-direction: column;
+    }
+
+    /* Grille Oblique */
+    .content-right {
+        justify-content: center;
+        padding-left: 50%;
+        transform: rotate(-90deg) skewY(10deg); /* L'inclinaison "Netflix" */
+    }
+
+    /* Les carrés gris */
+    .box {
+        width: 120px;
+        height: 180px;
+        overflow: hidden;
+        background: rgba(200, 200, 200, 0.2);
+        border-radius: 12px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); /* Petit effet glassmorphism en bonus */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        transform: rotate(90deg);
+    }
+
+    .column-scroll {
+    gap: 20px;
+    animation: scrollVertical 20s linear infinite;
+    }
+
+    .column-scroll.reverse {
+        animation: scrollVertical 25s linear infinite reverse;
+    }
+
+    /* L'Animation de défilement */
+    @keyframes scrollVertical {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-100%); } 
+    }
+
+    /* ==========================
+    PAGE MANIFESTO (manifesto.html)
+    ========================== */
+
+    /* Le conteneur parent (optionnel si vous l'avez déjà stylisé) */
+    .sous-contenair-manifesto {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Le "carton" du manifesto */
+    .design-manifesto, .code-manifesto {
+        width: 100%;
+    }
+
+    /* ==========================
+    PAGE PROJETS (projets.html)
+    ========================== */
+    .projet-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projet-card {
+        width: 90%;
+    }
+
+    /* ==========================
+    PAGE STACK (stack.html)
+    ========================== */
+
+    .sous-contenair-stack {
+        flex-direction: column;
+    }
+
+    .design-stack ,.code-stack {
+        width: 100%;
+    }
+
+    /* ==========================
+    PAGE L'ALCHIMISTE (propos.html)
+    ========================== */
+
+    #propos {
+    flex-direction: column;
+    }
+
+    .footer-content {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #formulaire {
+        width: 100%;
+    }
+
+    .location {
+        margin-bottom: 30px;
+    }
+
+}

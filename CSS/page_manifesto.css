@@ -1,0 +1,88 @@
+#manifesto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--text);
+}
+
+.manifesto-h1{
+    font-family: "Lilita One", cursive;
+    font-size: 5rem;
+}
+
+.manifesto-h3{
+    font-family: Courgette, cursive;
+    font-size: 1.9rem;
+    margin-top: -40px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+/* Le conteneur parent (optionnel si vous l'avez déjà stylisé) */
+.sous-contenair-manifesto {
+    display: flex; /* Pour mettre design-manifesto et code-manifesto côte à côte si besoin */
+    gap: 30px;
+    margin: 30px;
+}
+
+/* Le "carton" du manifesto */
+.design-manifesto, .code-manifesto {
+    /* Empêche les mots trop longs de casser la forme */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    align-items: start;
+    text-align: start;
+    background-color: var(--orangeclair); /* La couleur de fond terracotta de l'image */
+    border-radius: 15px; /* Coins arrondis */
+    display: flex;
+    width: 50%;
+    min-height: 300px; /* Utiliser min-height est plus flexible que height */
+    padding: 30px;     /* UNIQUE marge interne pour tout le monde */
+    gap: 15px;         /* Espace constant entre l'icône, le titre et le texte */
+    line-height: 1.5;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne tout le contenu à gauche */
+}
+
+/* Style de l'icône */
+.manifesto-icon {
+    font-size: 2.5rem;
+    color: var(--blue);
+    margin: 0; /* On laisse le parent gérer l'espace avec son padding */
+    transform: scale(1.2); /* Un léger scale pour la rendre plus percutante */
+}
+
+/* Couleur adoucie pour le texte (un blanc cassé/gris très clair) */
+.design-manifesto h3, .code-manifesto h3,
+.design-manifesto h5, .code-manifesto h5 {
+    margin: 0;             /* Retire les marges par défaut qui poussent les bords */
+    width: 100%;
+    /* padding: 20px; */
+    padding-left: 20px;
+    color: var(--text); /* 90% d'opacité, donc moins agressif que le pur blanc #ffffff */
+}
+
+/* Titre principal ("Le Design avec...") */
+.design-manifesto h3, .code-manifesto h3 {
+    margin: 0;
+    font-family: "Lilita One", cursive;
+    font-size: 2.5rem;
+    color: var(--text);
+    text-align: left;
+    font-weight: 100;
+    letter-spacing: 0.5px; /* Donne de l'espace aux lettres */
+}
+
+/* Texte descriptif ("Création d'identités...") */
+/* Texte descriptif - On retire le padding-left pour ne pas décaler */
+.design-manifesto h5, .code-manifesto h5 {
+    margin: 0;
+    font-family: "Courgette", cursive;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text);
+    text-align: left;
+    font-weight: 100;
+    letter-spacing: 0.5px; /* Donne de l'espace aux lettres */
+}

@@ -1,0 +1,261 @@
+portfolio/
+│
+├── index.html
+├── work.html
+├── about.html
+├── blog.html
+├── contact.html
+├── project-detail-1.html
+├── project-detail-2.html
+│
+├── css/
+│   ├── reset.css (ou normalize.css)
+│   ├── variables.css (couleurs, fonts, spacing)
+│   ├── base.css (styles globaux, typo)
+│   ├── components.css (buttons, cards, forms, etc.)
+│   ├── layout.css (header, footer, grid, sections)
+│   ├── pages.css (styles spécifiques par page)
+│   └── animations.css (transitions, keyframes)
+│
+├── js/
+│   ├── main.js (script principal)
+│   ├── navigation.js (menu mobile, smooth scroll)
+│   ├── animations.js (scroll animations, parallax)
+│   ├── form.js (validation formulaire contact)
+│   └── utils.js (fonctions utilitaires)
+│
+├── assets/
+│   ├── images/
+│   │   ├── logo/
+│   │   ├── projects/
+│   │   ├── about/
+│   │   └── blog/
+│   ├── icons/
+│   │   ├── social/
+│   │   └── skills/
+│   └── fonts/ (si custom)
+│
+└── README.md
+
+--------------Blur Animate ---------------------
+
+<iframe src="data:text/html;base64,PGh0bWw+CiAgICAgICAgPGhlYWQ+CiAgICAgICAgICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CiAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgIGh0bWwsIGJvZHl7CiAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgIGJvcmRlcjogMDsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vdW5wa2cuY29tL21lZGlhLXNoYWRlckBsYXRlc3QvbWVkaWEtc2hhZGVyLmpzIj48L3NjcmlwdD4KICAgIDxtZWRpYS1zaGFkZXIKICAgICAgICB3aWR0aD0iMTAyNHB4IiAKICAgICAgICBoZWlnaHQ9IjEwMjRweCIKICAgICAgICBmcmFnbWVudC1zaGFkZXI9JyN2ZXJzaW9uIDMwMCBlcwogICAgcHJlY2lzaW9uIGhpZ2hwIGZsb2F0OwogICAgb3V0IHZlYzQgZ2xGcmFnQ29sb3I7CnVuaWZvcm0gdmVjMiB1X3Jlc29sdXRpb247CnVuaWZvcm0gdmVjMiB1X21vdXNlOwp1bmlmb3JtIGZsb2F0IHVfdGltZTsKdW5pZm9ybSB2ZWMzIHVfY29sb3I7CnVuaWZvcm0gZmxvYXQgdV9zY2FsZTsgCnVuaWZvcm0gZmxvYXQgdV9zcGVlZDsgCnZvaWQgbWFpbigpIHsKICB2ZWMyIHN0ID0gZ2xfRnJhZ0Nvb3JkLnh5L3VfcmVzb2x1dGlvbi54eTsKICBmbG9hdCBtciA9IG1pbih1X3Jlc29sdXRpb24ueCwgdV9yZXNvbHV0aW9uLnkpOwogIHZlYzIgdXYgPSAoc3QueHkgKiAyLjAgLSAxLjApICogdV9yZXNvbHV0aW9uLnh5IC8gbXI7CiAgdXYgKj0gKDEuMC11X3NjYWxlKSAqIDIuOwogIGZsb2F0IGQgPSAtdV90aW1lICogMC41ICogdV9zcGVlZDsKICBmbG9hdCBhID0gMC4wOwogIGZvciAoZmxvYXQgaSA9IDAuMDsgaSA8IDguMDsgKytpKSB7CiAgICBhICs9IGNvcyhpIC0gZCAtIGEgKiB1di54KTsKICAgIGQgKz0gc2luKHV2LnkgKiBpICsgYSk7CiAgfQogIGQgKz0gdV90aW1lICogMC41ICogdV9zcGVlZDsKICB2ZWMzIGNvbCA9IHZlYzMoY29zKHV2ICogdmVjMihkLCBhKSkgKiAwLjYgKyAwLjQsIGNvcyhhICsgZCkgKiAwLjUgKyAwLjUpOwogIGNvbCA9IGNvcyhjb2wgKiBjb3ModmVjMyhkLCBhLCAyLjUpKSAqIDAuNSArIDAuNSkgKiB1X2NvbG9yOwogIGdsRnJhZ0NvbG9yID0gdmVjNChjb2wsIDEuMCk7Cn0nCiAgICAgICAgdW5pZm9ybXM9J3sidV9jb2xvciI6WzAuMTQ1MDk4MDM5MjE1Njg2MywwLjIzMTM3MjU0OTAxOTYwNzg1LDAuNDk4MDM5MjE1Njg2Mjc0NV0sInVfc2NhbGUiOjAsInVfc3BlZWQiOjF9Jz4KICAgIDwvbWVkaWEtc2hhZGVyPgogICAgICAgIDwvaGVhZD4KICAgICAgICA8Ym9keT48L2JvZHk+CiAgICAgICAgPC9odG1sPg==" style="border:0;margin:0;width: 1024px;height:1024px;"></iframe>
+
+--------------------------------------------------------------
+
+<script src="https://unpkg.com/media-shader@latest/media-shader.js"></script>
+    <media-shader
+        width="1024px" 
+        height="1024px"
+        fragment-shader='#version 300 es
+    precision highp float;
+    out vec4 glFragColor;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+uniform float u_time;
+uniform vec3 u_color;
+uniform float u_scale; 
+uniform float u_speed; 
+void main() {
+  vec2 st = gl_FragCoord.xy/u_resolution.xy;
+  float mr = min(u_resolution.x, u_resolution.y);
+  vec2 uv = (st.xy * 2.0 - 1.0) * u_resolution.xy / mr;
+  uv *= (1.0-u_scale) * 2.;
+  float d = -u_time * 0.5 * u_speed;
+  float a = 0.0;
+  for (float i = 0.0; i < 8.0; ++i) {
+    a += cos(i - d - a * uv.x);
+    d += sin(uv.y * i + a);
+  }
+  d += u_time * 0.5 * u_speed;
+  vec3 col = vec3(cos(uv * vec2(d, a)) * 0.6 + 0.4, cos(a + d) * 0.5 + 0.5);
+  col = cos(col * cos(vec3(d, a, 2.5)) * 0.5 + 0.5) * u_color;
+  glFragColor = vec4(col, 1.0);
+}'
+        uniforms='{"u_color":[0.1450980392156863,0.23137254901960785,0.4980392156862745],"u_scale":0,"u_speed":1}'>
+    </media-shader>
+--------------------------------------------
+
+{
+  "uniforms": {
+    "u_color": [
+      0.1450980392156863,
+      0.23137254901960785,
+      0.4980392156862745
+    ],
+    "u_scale": 0,
+    "u_speed": 1
+  },
+  "fragmentShader": "/* Credits: \n   Author: [Reactbits](https://www.reactbits.dev/backgrounds/iridescence)\n*/\n\n// Uniforms\nuniform vec2 u_resolution;\nuniform vec2 u_mouse;\nuniform float u_time;\nuniform vec3 u_color;\nuniform float u_scale; //units:%\nuniform float u_speed; //units:%\n\n\nvoid main() {\n  vec2 st = gl_FragCoord.xy/u_resolution.xy;\n  float mr = min(u_resolution.x, u_resolution.y);\n  vec2 uv = (st.xy * 2.0 - 1.0) * u_resolution.xy / mr;\n  \n  uv *= (1.0-u_scale) * 2.;\n\n  float d = -u_time * 0.5 * u_speed;\n  float a = 0.0;\n  for (float i = 0.0; i < 8.0; ++i) {\n    a += cos(i - d - a * uv.x);\n    d += sin(uv.y * i + a);\n  }\n  d += u_time * 0.5 * u_speed;\n  vec3 col = vec3(cos(uv * vec2(d, a)) * 0.6 + 0.4, cos(a + d) * 0.5 + 0.5);\n  col = cos(col * cos(vec3(d, a, 2.5)) * 0.5 + 0.5) * u_color;\n  gl_FragColor = vec4(col, 1.0);\n}",
+  "vertexShader": "#version 300 es\nprecision highp float;\nin vec4 a_position;\nin vec2 a_tex_coord;\nout vec2 v_tex_coord;\n\nvoid main() {\n  gl_Position = a_position;\n  v_tex_coord = a_tex_coord;\n}"
+}
+-----------Blur Animate ---------------------
+/////////////////////////////////////////////////
+
+
+--------------Autre animation ---------------------
+
+<iframe src="data:text/html;base64,PGh0bWw+CiAgICAgICAgPGhlYWQ+CiAgICAgICAgICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CiAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgIGh0bWwsIGJvZHl7CiAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgIGJvcmRlcjogMDsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vdW5wa2cuY29tL21lZGlhLXNoYWRlckBsYXRlc3QvbWVkaWEtc2hhZGVyLmpzIj48L3NjcmlwdD4KICAgIDxtZWRpYS1zaGFkZXIKICAgICAgICB3aWR0aD0iMTAyNHB4IiAKICAgICAgICBoZWlnaHQ9IjEwMjRweCIKICAgICAgICBmcmFnbWVudC1zaGFkZXI9JyN2ZXJzaW9uIDMwMCBlcwogICAgcHJlY2lzaW9uIGhpZ2hwIGZsb2F0OwogICAgb3V0IHZlYzQgZ2xGcmFnQ29sb3I7CiAgICAgICAgdW5pZm9ybSB2ZWMyIHVfcmVzb2x1dGlvbjsKICAgICAgICB1bmlmb3JtIHZlYzIgdV9tb3VzZTsKICAgICAgICB1bmlmb3JtIGZsb2F0IHVfdGltZTsKICAgICAgICB1bmlmb3JtIHZlYzQgdV9jb2xvcnNbNF07CiAgICAgICAgdW5pZm9ybSBmbG9hdCB1X2JsdXI7CiAgICAgICAgdW5pZm9ybSBib29sIHVfYW5pbWF0ZTsKICAgICAgICB1bmlmb3JtIGZsb2F0IHVfYW5pbWF0ZV9zcGVlZDsgCiAgICAgICAgdW5pZm9ybSBmbG9hdCB1X2ZyZXF1ZW5jeTsKICAgICAgICAjZGVmaW5lIFMoYSxiLHQpIHNtb290aHN0ZXAoYSxiLHQpCiNpZm5kZWYgU1JHQl9FUFNJTE9OIAojZGVmaW5lIFNSR0JfRVBTSUxPTiAwLjAwMDAwMDAxCiNlbmRpZgojaWZuZGVmIEZOQ19TUkdCMlJHQgojZGVmaW5lIEZOQ19TUkdCMlJHQgpmbG9hdCBzcmdiMnJnYihmbG9hdCBjaGFubmVsKSB7CiAgICByZXR1cm4gKGNoYW5uZWwgPCAwLjA0MDQ1KSA/IGNoYW5uZWwgKiAwLjA3NzM5OTM4MDggOiBwb3coKGNoYW5uZWwgKyAwLjA1NSkgKiAwLjk0Nzg2NzI5ODU3ODE5OSwgMi40KTsKfQp2ZWMzIHNyZ2IycmdiKHZlYzMgc3JnYikgewogICAgcmV0dXJuIHZlYzMoc3JnYjJyZ2Ioc3JnYi5yICsgU1JHQl9FUFNJTE9OKSwgCiAgICAgICAgICAgICAgICBzcmdiMnJnYihzcmdiLmcgKyBTUkdCX0VQU0lMT04pLCAgICAgICAgICAgICAgICAgc3JnYjJyZ2Ioc3JnYi5iICsgU1JHQl9FUFNJTE9OKSk7Cn0KdmVjNCBzcmdiMnJnYih2ZWM0IHNyZ2IpIHsKICAgIHJldHVybiB2ZWM0KHNyZ2IycmdiKHNyZ2IucmdiKSwgc3JnYi5hKTsKfQojZW5kaWYKI2lmICFkZWZpbmVkKEZOQ19TQVRVUkFURSkgJiYgIWRlZmluZWQoc2F0dXJhdGUpCiNkZWZpbmUgRk5DX1NBVFVSQVRFCiNkZWZpbmUgc2F0dXJhdGUoeCkgY2xhbXAoeCwgMC4wLCAxLjApCiNlbmRpZgojaWZuZGVmIFNSR0JfRVBTSUxPTiAKI2RlZmluZSBTUkdCX0VQU0lMT04gMC4wMDAwMDAwMQojZW5kaWYKI2lmbmRlZiBGTkNfUkdCMlNSR0IKI2RlZmluZSBGTkNfUkdCMlNSR0IKZmxvYXQgcmdiMnNyZ2IoZmxvYXQgY2hhbm5lbCkgewogICAgcmV0dXJuIChjaGFubmVsIDwgMC4wMDMxMzA4KSA/IGNoYW5uZWwgKiAxMi45MiA6IDEuMDU1ICogcG93KGNoYW5uZWwsIDAuNDE2NjY2NjY2NjY2NjY2NykgLSAwLjA1NTsKfQp2ZWMzIHJnYjJzcmdiKHZlYzMgcmdiKSB7CiAgICByZXR1cm4gc2F0dXJhdGUodmVjMyhyZ2Iyc3JnYihyZ2IuciAtIFNSR0JfRVBTSUxPTiksIHJnYjJzcmdiKHJnYi5nIC0gU1JHQl9FUFNJTE9OKSwgcmdiMnNyZ2IocmdiLmIgLSBTUkdCX0VQU0lMT04pKSk7Cn0KdmVjNCByZ2Iyc3JnYih2ZWM0IHJnYikgewogICAgcmV0dXJuIHZlYzQocmdiMnNyZ2IocmdiLnJnYiksIHJnYi5hKTsKfQojZW5kaWYKI2lmbmRlZiBGTkNfTUlYT0tMQUIKI2RlZmluZSBGTkNfTUlYT0tMQUIKdmVjMyBtaXhPa2xhYiggdmVjMyBjb2xBLCB2ZWMzIGNvbEIsIGZsb2F0IGggKSB7CiAgICAjaWZkZWYgTUlYT0tMQUJfQ09MT1JTUEFDRV9TUkdCCiAgICBjb2xBID0gc3JnYjJyZ2IoY29sQSk7CiAgICBjb2xCID0gc3JnYjJyZ2IoY29sQik7CiAgICAjZW5kaWYKICAgIGNvbnN0IG1hdDMga0NPTkV0b0xNUyA9IG1hdDMoICAgICAgICAgICAgICAgIAogICAgICAgICAwLjQxMjE2NTYxMjAsICAwLjIxMTg1OTEwNzAsICAwLjA4ODMwOTc5NDcsCiAgICAgICAgIDAuNTM2Mjc1MjA4MCwgIDAuNjgwNzE4OTU4NCwgIDAuMjgxODQ3NDE3NCwKICAgICAgICAgMC4wNTE0NTc1NjUzLCAgMC4xMDc0MDY1NzkwLCAgMC42MzAyNjEzNjE2KTsKICAgIGNvbnN0IG1hdDMga0xNU3RvQ09ORSA9IG1hdDMoCiAgICAgICAgIDQuMDc2NzI0NTI5MywgLTEuMjY4MTQzNzczMSwgLTAuMDA0MTExOTg4NSwKICAgICAgICAtMy4zMDcyMTY4ODI3LCAgMi42MDkzMzIzMjMxLCAtMC43MDM0NzYzMDk4LAogICAgICAgICAwLjIzMDc1OTA1NDQsIC0wLjM0MTEzNDQyOTAsICAxLjcwNjg2MjU2ODkpOwogICAgdmVjMyBsbXNBID0gcG93KCBrQ09ORXRvTE1TICogY29sQSwgdmVjMygxLjAvMy4wKSApOwogICAgdmVjMyBsbXNCID0gcG93KCBrQ09ORXRvTE1TICogY29sQiwgdmVjMygxLjAvMy4wKSApOwogICAgdmVjMyBsbXMgPSBtaXgoIGxtc0EsIGxtc0IsIGggKTsKICAgIHZlYzMgcmdiID0ga0xNU3RvQ09ORSoobG1zKmxtcypsbXMpOwogICAgI2lmZGVmIE1JWE9LTEFCX0NPTE9SU1BBQ0VfU1JHQgogICAgcmV0dXJuIHJnYjJzcmdiKHJnYik7CiAgICAjZWxzZQogICAgcmV0dXJuIHJnYjsKICAgICNlbmRpZgp9CnZlYzQgbWl4T2tsYWIoIHZlYzQgY29sQSwgdmVjNCBjb2xCLCBmbG9hdCBoICkgewogICAgcmV0dXJuIHZlYzQoIG1peE9rbGFiKGNvbEEucmdiLCBjb2xCLnJnYiwgaCksIG1peChjb2xBLmEsIGNvbEIuYSwgaCkgKTsKfQojZW5kaWYKICAgICAgICBtYXQyIFJvdChmbG9hdCBhKXsKICAgICAgICAgIGZsb2F0IHMgPSBzaW4oYSk7CiAgICAgICAgICBmbG9hdCBjID0gY29zKGEpOwogICAgICAgICAgcmV0dXJuIG1hdDIoYywgLXMsIHMsIGMpOwogICAgICAgIH0KICAgICAgICB2ZWMyIGhhc2goIHZlYzIgcCApewogICAgICAgICAgcCA9IHZlYzIoIGRvdChwLHZlYzIoMjEyNy4xLDgxLjE3KSksIGRvdChwLHZlYzIoMTI2OS41LDI4My4zNykpICk7CiAgICAgICAgICByZXR1cm4gZnJhY3Qoc2luKHApKjQzNzU4LjU0NTMpOwogICAgICAgIH0KICAgICAgICBmbG9hdCBub2lzZSggaW4gdmVjMiBwICl7CiAgICAgICAgICB2ZWMyIGkgPSBmbG9vciggcCApOwogICAgICAgICAgdmVjMiBmID0gZnJhY3QoIHAgKTsKICAgICAgICAgIHZlYzIgdSA9IGYqZiooMy4wLTIuMCpmKTsKICAgICAgICAgIGZsb2F0IG4gPSBtaXgoIG1peCggZG90KCAtMS4wKzIuMCpoYXNoKCBpICsgdmVjMigwLjAsMC4wKSApLCBmIC0gdmVjMigwLjAsMC4wKSApLAogICAgICAgICAgICAgICAgICAgIGRvdCggLTEuMCsyLjAqaGFzaCggaSArIHZlYzIoMS4wLDAuMCkgKSwgZiAtIHZlYzIoMS4wLDAuMCkgKSwgdS54KSwKICAgICAgICAgICAgICAgICAgICBtaXgoIGRvdCggLTEuMCsyLjAqaGFzaCggaSArIHZlYzIoMC4wLDEuMCkgKSwgZiAtIHZlYzIoMC4wLDEuMCkgKSwKICAgICAgICAgICAgICAgICAgICBkb3QoIC0xLjArMi4wKmhhc2goIGkgKyB2ZWMyKDEuMCwxLjApICksIGYgLSB2ZWMyKDEuMCwxLjApICksIHUueCksIHUueSk7CiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDAuNSArIDAuNSpuOwogICAgICAgICAgICAgICAgICB9CiAgICAgICAgICB2b2lkIG1haW4oKXsKICAgICAgICAgICAgdmVjMiB1diA9IGdsX0ZyYWdDb29yZC54eS91X3Jlc29sdXRpb24ueHk7CiAgICAgICAgICAgIGZsb2F0IHJhdGlvID0gdV9yZXNvbHV0aW9uLnggLyB1X3Jlc29sdXRpb24ueTsKICAgICAgICAgICAgdmVjMiB0dXYgPSB1djsKICAgICAgICAgICAgdHV2IC09IC41OwogICAgICAgICAgICBmbG9hdCBzcGVlZCA9IHVfdGltZSAqIDEwLiAqIHVfYW5pbWF0ZV9zcGVlZDsKICAgICAgICAgICAgaWYodV9hbmltYXRlID09IGZhbHNlKXsKICAgICAgICAgICAgICBzcGVlZCA9IDAuMDsKICAgICAgICAgICAgfQogICAgICAgICAgICBmbG9hdCBkZWdyZWUgPSBub2lzZSh2ZWMyKHNwZWVkLzEwMC4wLCB0dXYueCp0dXYueSkpOwogICAgICAgICAgICB0dXYueSAqPSAxLi9yYXRpbzsKICAgICAgICAgICAgdHV2ICo9IFJvdChyYWRpYW5zKChkZWdyZWUtLjUpKjcyMC4rMTgwLikpOwogICAgICAgICAgICB0dXYueSAqPSByYXRpbzsKICAgICAgICAgICAgZmxvYXQgZnJlcXVlbmN5ID0gMjAuICogdV9mcmVxdWVuY3k7CiAgICAgICAgICAgIGZsb2F0IGFtcGxpdHVkZSA9IDMwLiAqICgxMC4qKDAuMDErdV9ibHVyKSk7CiAgICAgICAgICAgIHR1di54ICs9IHNpbih0dXYueSpmcmVxdWVuY3krc3BlZWQpL2FtcGxpdHVkZTsKICAgICAgICAgICAgdHV2LnkgKz0gc2luKHR1di54KmZyZXF1ZW5jeSoxLjUrc3BlZWQpLyhhbXBsaXR1ZGUqLjUpOwogICAgICAgICAgICB2ZWM0IGxheWVyMSA9IG1peE9rbGFiKHVfY29sb3JzWzBdLCB1X2NvbG9yc1sxXSwgUygtLjMsIC4yLCAodHV2KlJvdChyYWRpYW5zKC01LikpKS54KSk7CiAgICAgICAgICAgIHZlYzQgbGF5ZXIyID0gbWl4T2tsYWIodV9jb2xvcnNbMl0sIHVfY29sb3JzWzNdLCBTKC0uMywgLjIsICh0dXYqUm90KHJhZGlhbnMoLTUuKSkpLngpKTsKICAgICAgICAgICAgdmVjNCBmaW5hbENvbXAgPSBtaXhPa2xhYihsYXllcjEsIGxheWVyMiwgUyguNSwgLS4zLCB0dXYueSkpOwogICAgICAgICAgICBnbEZyYWdDb2xvciA9IGZpbmFsQ29tcDsKICAgICAgICAgICAgfScKICAgICAgICB1bmlmb3Jtcz0neyJ1X2NvbG9ycyI6W1swLjAzOTIxNTY4NjI3NDUwOTgsMC4xNDExNzY0NzA1ODgyMzUzLDAuNDQ3MDU4ODIzNTI5NDExOCwxXSxbMSwwLjcyOTQxMTc2NDcwNTg4MjMsMC4wMzEzNzI1NDkwMTk2MDc4NCwxXSxbMC43NzI1NDkwMTk2MDc4NDMyLDAuMzQxMTc2NDcwNTg4MjM1MywwLjE4NDMxMzcyNTQ5MDE5NjEsMV0sWzAuNzU2ODYyNzQ1MDk4MDM5MiwwLjQsMC40MTk2MDc4NDMxMzcyNTQ5LDFdXSwidV9ibHVyIjowLjAyMiwidV9hbmltYXRlIjp0cnVlLCJ1X2FuaW1hdGVfc3BlZWQiOjAuMjIsInVfZnJlcXVlbmN5IjoxfSc+CiAgICA8L21lZGlhLXNoYWRlcj4KICAgICAgICA8L2hlYWQ+CiAgICAgICAgPGJvZHk+PC9ib2R5PgogICAgICAgIDwvaHRtbD4=" style="border:0;margin:0;width: 1024px;height:1024px;"></iframe>
+
+<script src="https://unpkg.com/media-shader@latest/media-shader.js"></script>
+    <media-shader
+        width="1024px" 
+        height="1024px"
+        fragment-shader='#version 300 es
+    precision highp float;
+    out vec4 glFragColor;
+        uniform vec2 u_resolution;
+        uniform vec2 u_mouse;
+        uniform float u_time;
+        uniform vec4 u_colors[4];
+        uniform float u_blur;
+        uniform bool u_animate;
+        uniform float u_animate_speed; 
+        uniform float u_frequency;
+        #define S(a,b,t) smoothstep(a,b,t)
+#ifndef SRGB_EPSILON 
+#define SRGB_EPSILON 0.00000001
+#endif
+#ifndef FNC_SRGB2RGB
+#define FNC_SRGB2RGB
+float srgb2rgb(float channel) {
+    return (channel < 0.04045) ? channel * 0.0773993808 : pow((channel + 0.055) * 0.947867298578199, 2.4);
+}
+vec3 srgb2rgb(vec3 srgb) {
+    return vec3(srgb2rgb(srgb.r + SRGB_EPSILON), 
+                srgb2rgb(srgb.g + SRGB_EPSILON),                 srgb2rgb(srgb.b + SRGB_EPSILON));
+}
+vec4 srgb2rgb(vec4 srgb) {
+    return vec4(srgb2rgb(srgb.rgb), srgb.a);
+}
+#endif
+#if !defined(FNC_SATURATE) && !defined(saturate)
+#define FNC_SATURATE
+#define saturate(x) clamp(x, 0.0, 1.0)
+#endif
+#ifndef SRGB_EPSILON 
+#define SRGB_EPSILON 0.00000001
+#endif
+#ifndef FNC_RGB2SRGB
+#define FNC_RGB2SRGB
+float rgb2srgb(float channel) {
+    return (channel < 0.0031308) ? channel * 12.92 : 1.055 * pow(channel, 0.4166666666666667) - 0.055;
+}
+vec3 rgb2srgb(vec3 rgb) {
+    return saturate(vec3(rgb2srgb(rgb.r - SRGB_EPSILON), rgb2srgb(rgb.g - SRGB_EPSILON), rgb2srgb(rgb.b - SRGB_EPSILON)));
+}
+vec4 rgb2srgb(vec4 rgb) {
+    return vec4(rgb2srgb(rgb.rgb), rgb.a);
+}
+#endif
+#ifndef FNC_MIXOKLAB
+#define FNC_MIXOKLAB
+vec3 mixOklab( vec3 colA, vec3 colB, float h ) {
+    #ifdef MIXOKLAB_COLORSPACE_SRGB
+    colA = srgb2rgb(colA);
+    colB = srgb2rgb(colB);
+    #endif
+    const mat3 kCONEtoLMS = mat3(                
+         0.4121656120,  0.2118591070,  0.0883097947,
+         0.5362752080,  0.6807189584,  0.2818474174,
+         0.0514575653,  0.1074065790,  0.6302613616);
+    const mat3 kLMStoCONE = mat3(
+         4.0767245293, -1.2681437731, -0.0041119885,
+        -3.3072168827,  2.6093323231, -0.7034763098,
+         0.2307590544, -0.3411344290,  1.7068625689);
+    vec3 lmsA = pow( kCONEtoLMS * colA, vec3(1.0/3.0) );
+    vec3 lmsB = pow( kCONEtoLMS * colB, vec3(1.0/3.0) );
+    vec3 lms = mix( lmsA, lmsB, h );
+    vec3 rgb = kLMStoCONE*(lms*lms*lms);
+    #ifdef MIXOKLAB_COLORSPACE_SRGB
+    return rgb2srgb(rgb);
+    #else
+    return rgb;
+    #endif
+}
+vec4 mixOklab( vec4 colA, vec4 colB, float h ) {
+    return vec4( mixOklab(colA.rgb, colB.rgb, h), mix(colA.a, colB.a, h) );
+}
+#endif
+        mat2 Rot(float a){
+          float s = sin(a);
+          float c = cos(a);
+          return mat2(c, -s, s, c);
+        }
+        vec2 hash( vec2 p ){
+          p = vec2( dot(p,vec2(2127.1,81.17)), dot(p,vec2(1269.5,283.37)) );
+          return fract(sin(p)*43758.5453);
+        }
+        float noise( in vec2 p ){
+          vec2 i = floor( p );
+          vec2 f = fract( p );
+          vec2 u = f*f*(3.0-2.0*f);
+          float n = mix( mix( dot( -1.0+2.0*hash( i + vec2(0.0,0.0) ), f - vec2(0.0,0.0) ),
+                    dot( -1.0+2.0*hash( i + vec2(1.0,0.0) ), f - vec2(1.0,0.0) ), u.x),
+                    mix( dot( -1.0+2.0*hash( i + vec2(0.0,1.0) ), f - vec2(0.0,1.0) ),
+                    dot( -1.0+2.0*hash( i + vec2(1.0,1.0) ), f - vec2(1.0,1.0) ), u.x), u.y);
+                    return 0.5 + 0.5*n;
+                  }
+          void main(){
+            vec2 uv = gl_FragCoord.xy/u_resolution.xy;
+            float ratio = u_resolution.x / u_resolution.y;
+            vec2 tuv = uv;
+            tuv -= .5;
+            float speed = u_time * 10. * u_animate_speed;
+            if(u_animate == false){
+              speed = 0.0;
+            }
+            float degree = noise(vec2(speed/100.0, tuv.x*tuv.y));
+            tuv.y *= 1./ratio;
+            tuv *= Rot(radians((degree-.5)*720.+180.));
+            tuv.y *= ratio;
+            float frequency = 20. * u_frequency;
+            float amplitude = 30. * (10.*(0.01+u_blur));
+            tuv.x += sin(tuv.y*frequency+speed)/amplitude;
+            tuv.y += sin(tuv.x*frequency*1.5+speed)/(amplitude*.5);
+            vec4 layer1 = mixOklab(u_colors[0], u_colors[1], S(-.3, .2, (tuv*Rot(radians(-5.))).x));
+            vec4 layer2 = mixOklab(u_colors[2], u_colors[3], S(-.3, .2, (tuv*Rot(radians(-5.))).x));
+            vec4 finalComp = mixOklab(layer1, layer2, S(.5, -.3, tuv.y));
+            glFragColor = finalComp;
+            }'
+        uniforms='{"u_colors":[[0.0392156862745098,0.1411764705882353,0.4470588235294118,1],[1,0.7294117647058823,0.03137254901960784,1],[0.7725490196078432,0.3411764705882353,0.1843137254901961,1],[0.7568627450980392,0.4,0.4196078431372549,1]],"u_blur":0.022,"u_animate":true,"u_animate_speed":0.22,"u_frequency":1}'>
+    </media-shader>
+
+
+{
+  "uniforms": {
+    "u_colors": [
+      [
+        0.0392156862745098,
+        0.1411764705882353,
+        0.4470588235294118,
+        1
+      ],
+      [
+        1,
+        0.7294117647058823,
+        0.03137254901960784,
+        1
+      ],
+      [
+        0.7725490196078432,
+        0.3411764705882353,
+        0.1843137254901961,
+        1
+      ],
+      [
+        0.7568627450980392,
+        0.4,
+        0.4196078431372549,
+        1
+      ]
+    ],
+    "u_blur": 0.022,
+    "u_animate": true,
+    "u_animate_speed": 0.22,
+    "u_frequency": 1
+  },
+  "fragmentShader": "// Fragment shader\n\n        // Uniforms\n\n        uniform vec2 u_resolution;\n\n        uniform vec2 u_mouse;\n\n        uniform float u_time;\n\n        uniform vec4 u_colors[4];\n\n        uniform float u_blur;\n\n        uniform bool u_animate;\n\n        uniform float u_animate_speed; //label:Speed\n\n        uniform float u_frequency;\n\n        \n\n        #define S(a,b,t) smoothstep(a,b,t)\n\n\n\n\n\n#ifndef SRGB_EPSILON \n#define SRGB_EPSILON 0.00000001\n#endif\n\n#ifndef FNC_SRGB2RGB\n#define FNC_SRGB2RGB\n\n\n\n\nfloat srgb2rgb(float channel) {\n    return (channel < 0.04045) ? channel * 0.0773993808 : pow((channel + 0.055) * 0.947867298578199, 2.4);\n}\n\nvec3 srgb2rgb(vec3 srgb) {\n    return vec3(srgb2rgb(srgb.r + SRGB_EPSILON), \n                srgb2rgb(srgb.g + SRGB_EPSILON),                 srgb2rgb(srgb.b + SRGB_EPSILON));\n}\n\nvec4 srgb2rgb(vec4 srgb) {\n    return vec4(srgb2rgb(srgb.rgb), srgb.a);\n}\n\n#endif\n\n\n#if !defined(FNC_SATURATE) && !defined(saturate)\n#define FNC_SATURATE\n#define saturate(x) clamp(x, 0.0, 1.0)\n#endif\n\n\n\n#ifndef SRGB_EPSILON \n#define SRGB_EPSILON 0.00000001\n#endif\n\n#ifndef FNC_RGB2SRGB\n#define FNC_RGB2SRGB\n\n\nfloat rgb2srgb(float channel) {\n    return (channel < 0.0031308) ? channel * 12.92 : 1.055 * pow(channel, 0.4166666666666667) - 0.055;\n}\n\nvec3 rgb2srgb(vec3 rgb) {\n    return saturate(vec3(rgb2srgb(rgb.r - SRGB_EPSILON), rgb2srgb(rgb.g - SRGB_EPSILON), rgb2srgb(rgb.b - SRGB_EPSILON)));\n}\n\nvec4 rgb2srgb(vec4 rgb) {\n    return vec4(rgb2srgb(rgb.rgb), rgb.a);\n}\n\n#endif\n\n\n\n#ifndef FNC_MIXOKLAB\n#define FNC_MIXOKLAB\nvec3 mixOklab( vec3 colA, vec3 colB, float h ) {\n\n    #ifdef MIXOKLAB_COLORSPACE_SRGB\n    colA = srgb2rgb(colA);\n    colB = srgb2rgb(colB);\n    #endif\n\n    \n    const mat3 kCONEtoLMS = mat3(                \n         0.4121656120,  0.2118591070,  0.0883097947,\n         0.5362752080,  0.6807189584,  0.2818474174,\n         0.0514575653,  0.1074065790,  0.6302613616);\n    const mat3 kLMStoCONE = mat3(\n         4.0767245293, -1.2681437731, -0.0041119885,\n        -3.3072168827,  2.6093323231, -0.7034763098,\n         0.2307590544, -0.3411344290,  1.7068625689);\n                    \n    \n    vec3 lmsA = pow( kCONEtoLMS * colA, vec3(1.0/3.0) );\n    vec3 lmsB = pow( kCONEtoLMS * colB, vec3(1.0/3.0) );\n    \n    vec3 lms = mix( lmsA, lmsB, h );\n    \n    \n    vec3 rgb = kLMStoCONE*(lms*lms*lms);\n\n    #ifdef MIXOKLAB_COLORSPACE_SRGB\n    return rgb2srgb(rgb);\n    #else\n    return rgb;\n    #endif\n}\n\nvec4 mixOklab( vec4 colA, vec4 colB, float h ) {\n    return vec4( mixOklab(colA.rgb, colB.rgb, h), mix(colA.a, colB.a, h) );\n}\n#endif\n\n        mat2 Rot(float a){\n\n          float s = sin(a);\n\n          float c = cos(a);\n\n          return mat2(c, -s, s, c);\n\n        }\n\n        // Created by inigo quilez - iq/2014\n\n        // License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.\n\n        vec2 hash( vec2 p ){\n\n          p = vec2( dot(p,vec2(2127.1,81.17)), dot(p,vec2(1269.5,283.37)) );\n\n          return fract(sin(p)*43758.5453);\n\n        }\n\n        float noise( in vec2 p ){\n\n          vec2 i = floor( p );\n\n          vec2 f = fract( p );\n\n          vec2 u = f*f*(3.0-2.0*f);\n\n          float n = mix( mix( dot( -1.0+2.0*hash( i + vec2(0.0,0.0) ), f - vec2(0.0,0.0) ),\n\n                    dot( -1.0+2.0*hash( i + vec2(1.0,0.0) ), f - vec2(1.0,0.0) ), u.x),\n\n                    mix( dot( -1.0+2.0*hash( i + vec2(0.0,1.0) ), f - vec2(0.0,1.0) ),\n\n                    dot( -1.0+2.0*hash( i + vec2(1.0,1.0) ), f - vec2(1.0,1.0) ), u.x), u.y);\n\n                    return 0.5 + 0.5*n;\n\n                  }\n\n          void main(){\n\n            vec2 uv = gl_FragCoord.xy/u_resolution.xy;\n\n            float ratio = u_resolution.x / u_resolution.y;\n\n            vec2 tuv = uv;\n\n            tuv -= .5;\n\n            //animation\n\n            float speed = u_time * 10. * u_animate_speed;\n\n            if(u_animate == false){\n\n              speed = 0.0;\n\n            }\n\n            // rotate with Noise\n\n            float degree = noise(vec2(speed/100.0, tuv.x*tuv.y));\n\n            tuv.y *= 1./ratio;\n\n            tuv *= Rot(radians((degree-.5)*720.+180.));\n\n            tuv.y *= ratio;\n\n            // Wave warp with sin\n\n            float frequency = 20. * u_frequency;\n\n            float amplitude = 30. * (10.*(0.01+u_blur));\n\n            tuv.x += sin(tuv.y*frequency+speed)/amplitude;\n\n            tuv.y += sin(tuv.x*frequency*1.5+speed)/(amplitude*.5);\n\n            // draw the image\n\n            vec4 layer1 = mixOklab(u_colors[0], u_colors[1], S(-.3, .2, (tuv*Rot(radians(-5.))).x));\n\n            vec4 layer2 = mixOklab(u_colors[2], u_colors[3], S(-.3, .2, (tuv*Rot(radians(-5.))).x));\n\n            vec4 finalComp = mixOklab(layer1, layer2, S(.5, -.3, tuv.y));\n\n            gl_FragColor = finalComp;\n\n            }\n\n",
+  "vertexShader": "#version 300 es\nprecision highp float;\nin vec4 a_position;\nin vec2 a_tex_coord;\nout vec2 v_tex_coord;\n\nvoid main() {\n  gl_Position = a_position;\n  v_tex_coord = a_tex_coord;\n}"
+}
+

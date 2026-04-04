@@ -1,0 +1,120 @@
+/* L'animation d'allumage */
+@keyframes glowIn {
+  from {
+    opacity: 0.5;
+    text-shadow: 0 0 0px #0a24724b;
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--blue), 
+                 0 0 20px var(--text);
+  }
+}
+
+/* Initier hover */
+.Initier {
+  position: relative;
+  color: var(--orange);
+  font-family: Courgette, cursive;
+  padding: 15px 30px;
+  border: 2px solid var(--blue); /* Bordure translucide */
+  color: var(--blue);
+  background: hsla(0, 0%, 100%, 0.05); /* Fond très léger (Glassmorphism) */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);          /* Flou d'arrière-plan */
+  cursor: pointer;
+  border-radius: 50px;                 /* Bouton pilule */
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 1;
+  text-decoration: none;
+  transition: color 0.4s, box-shadow 0.3s; /* Transition pour l'éclat */
+}
+
+/* 1. L'ÉCLAT AU SURVOL (Glow) */
+.Initier:hover {
+  color: var(--orange);
+  box-shadow: 0 0 20px rgba(10, 35, 113, 0.3),
+              0 0 40px rgba(10, 36, 113, 0.6);
+}
+
+/* 2. LE REMPLISSAGE INTÉRIEUR (comme WhatsApp) */
+.Initier::before {
+  content: "";
+  position: absolute;
+  top: 100%; /* Part du bas */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--blue);
+  z-index: -1;
+  transition: top 0.4s cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.Initier:hover::before {
+  top: 0; /* Remplit tout */
+}
+
+/* 3. L'EFFET D'ENFONCEMENT AU CLIC (Ressort) */
+.Initier:active {
+  transform: translateY(2px) scale(0.98); /* Il descend et se comprime */
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    inset 0 0 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(10, 36, 114, 0.664);
+  transition: transform 0.1s;             /* Très rapide pour le clic */
+}
+
+
+.logo{
+  border-radius: 8px; /* La forme ronde */
+  color: var(--text);
+  background: var(--glass);
+  /* background: linear-gradient(to right, var(--blue), var(--orange)); */
+  
+  /* 3. La bordure fine (l'éclat du verre) */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding-right: 18px;
+  padding-left: 18px;
+  
+  /* 4. Les ombres pour le volume (Effet 3D) */
+  box-shadow: 
+    0 25px 45px rgba(0, 0, 0, 0.1),            /* Ombre portée au sol */
+    inset 0 0 15px rgba(255, 255, 255, 0.5),   /* Reflet interne blanc */
+    inset 0 0 30px rgba(0, 0, 0, 0.05);        /* Ombre interne légère */
+}
+
+/* Boutton de la page d'acceuil : index.html */
+.GitHub, .Dle{
+  background: var(--orange);
+  padding: 30px;
+  text-decoration: none;
+  border-radius: 50px;
+}
+.GitHub{
+  margin-left: 20px;
+}
+
+.Dle{
+  margin-right: 20px;
+}
+
+.GitHub:hover, .Dle:hover{
+  color: var(--orange);
+  background: var(--blue);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
+              0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.GitHub:active, .Dle:active{
+  transform: translateY(2px) scale(0.98); /* Il descend et se comprime */
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    inset 0 0 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(10, 36, 114, 0.664);
+}
+
+.bouton-drow{
+  display: flex;
+  margin: 10px;
+}

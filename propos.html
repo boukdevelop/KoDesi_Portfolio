@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Portfolio BOUKALA</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="CSS/variables.css">
+    <link rel="stylesheet" href="CSS/body.css" />
+    <link rel="stylesheet" href="CSS/button.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/page_propos.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body>
+    <!-- Animation BLUR bleu -->
+
+    <!-- Body Element -->
+
+    <!-- Header -->
+    <header>
+            <div class="header-container">
+                <h1 class="logo">KoDesi</h1>
+                
+                <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="manifesto.html">Manifesto</a></li>
+                        <li><a href="stack.html">Stack</a></li>
+                        <li><a href="projets.html">Projets</a></li>
+                        <li><a class="active" href="propos.html">L'Alchimiste</a></li>
+                    </ul>
+                </nav>
+                <a class="Initier" href="#formulaire">Initier (Projet)</a>
+            </div>
+        </header>
+
+    <!-- element à propos -->
+
+    <div class="container-all" id="propos">
+        <div class="image-propos">
+            <img src="assets/images/MOI.jpg" alt="Photo retouchée">
+            <em class="rotating-badge">KoDesi</em>
+        </div>
+
+        <div class="text-propos">
+            <h1>L'Alchimiste derrière l'écran.</h1>
+            <h2>// BOUKALA BONOKO FRANCK GABRIEL</h2>
+            <h4>Je suis un développeur web et graphic designer freelance. Ma mission ? Transformer le chaos abstrait des idées en interfaces claires, esthétiques et fonctionnelles. <br><br>
+                Fondateur de BoukaLab, je crois fermement que le design et le code ne doivent pas vivre en silos. Le meilleur design est celui qui est parfaitement intégrable, et le meilleur code est celui qui sert une expérience utilisateur sans friction. <br><br>
+                Que ce soit pour sculpter un logo vectoriel ou structurer la logique d'une application React, mon approche reste la même : la précision, l'innovation, et une touche de "chill" pour que le processus créatif reste un plaisir.
+            </h4>
+        </div>
+
+    </div>
+
+    <!-- Le pieds de pages -->
+
+    <footer>
+            <div class="footer-content">
+                <!-- LOGO; POSITIONS -->
+                <div class="location">
+                    <i class="fas fa-map-marker-alt mt-1 mr-3 text-secondary"></i>
+                    <span>Yaoundé, Cameroun</span>
+                    <i class="fas fa-phone mr-3 text-secondary"></i>
+                    <span>+237 686 029 543</span>
+                    <i class="fas fa-envelope mr-3 text-secondary"></i>
+                    <span><a href="boukalabonoko@gmail.com">boukalabonoko@gmail.com</a></span>
+                </div>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" title="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+
+                <form id="formulaire">
+                    Nom :
+                    <input type="text" name="name" placeholder="Votre nom" required>
+                    E-mail :
+                    <input type="email" name="email" placeholder="Votre E-mail" required>
+                    Dites-nous :
+                    <textarea rows="4" name="message" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+
+            </div>
+            
+            <div class="droit">
+                <p>&copy;2026 KoDesi. L'esthétique codée.<br> Tous droits réservés </p>
+            </div>
+
+        </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="JS/responsive.js" async defer></script>
+  </body>
+</html>

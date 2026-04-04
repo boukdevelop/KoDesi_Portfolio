@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portfolio BOUKALA</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSS/variables.css">
+        <link rel="stylesheet" href="CSS/body.css">
+        <link rel="stylesheet" href="CSS/button.css">
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lilita+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/page_projet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="CSS/responsive.css">
+    </head>
+    <body>
+        <!-- <img class="BodyT" src="assets/images/MOI.jpg" alt="KoDesi"> -->
+        <!-- Animation BLUR bleu -->
+
+        <!-- Body Element -->
+
+            <!-- ===============
+                HEADER NORMAL
+            ================= -->
+
+        <header>
+            <div class="header-container">
+                <h1 class="logo">KoDesi</h1>
+                
+                <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="manifesto.html">Manifesto</a></li>
+                        <li><a href="stack.html">Stack</a></li>
+                        <li><a class="active" href="projets.html">Projets</a></li>
+                        <li><a href="propos.html">L'Alchimiste</a></li>
+                    </ul>
+                </nav>
+                <a class="Initier" href="#formulaire">Initier (Projet)</a>
+            </div>
+        </header>
+
+        <!-- element -->
+        <div class="container-all" id="projets">
+            <h1 class="projets-h1">
+                Expérimentations & Solutions.
+            </h1>
+            <h3 class="projets-h3">
+                Rapports de Laboratoire sélectionné
+            </h3>
+
+            <!-- liste des projets -->
+
+            <div class="projet-list">
+
+                <div class="projet-card">
+                    <div class="projet-img">
+                        <img src="assets/images/Juice_poster.png" alt="Marketing Digital">
+                    </div>
+                    <div class="projet-content">
+                        <div class="projet-badges">
+                            <span class="badge">Graphisme / Design</span>
+                            <span class="badge">Freelance</span>
+                        </div>
+                        <h3>Marketing Digital</h3>
+                        <h5>Conception de flyers pour une entreprise spécialisée dans la vente de croquettes et de foléré.</h5>
+                        <a href="#Voir" class="projet-link">Voir le projet &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="projet-card">
+                    <div class="projet-img">
+                        <img src="assets/images/photo_moi.jpg" alt="Retouche Photo">
+                    </div>
+                    <div class="projet-content">
+                        <div class="projet-badges">
+                            <span class="badge">Art Photographique</span>
+                        </div>
+                        <h3>Retouche photo</h3>
+                        <h5>Retouche et conception de portrait photo; embellissement de cadre photo.</h5>
+                        <a href="#Voir" class="projet-link">Voir le projet &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Le pieds de pages -->
+
+        <footer>
+            <div class="footer-content">
+                <!-- LOGO; POSITIONS -->
+                <div class="location">
+                    <i class="fas fa-map-marker-alt mt-1 mr-3 text-secondary"></i>
+                    <span>Yaoundé, Cameroun</span>
+                    <i class="fas fa-phone mr-3 text-secondary"></i>
+                    <span>+237 686 029 543</span>
+                    <i class="fas fa-envelope mr-3 text-secondary"></i>
+                    <span><a href="boukalabonoko@gmail.com">boukalabonoko@gmail.com</a></span>
+                </div>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" title="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+
+                <form id="formulaire">
+                    Nom :
+                    <input type="text" name="name" placeholder="Votre nom" required>
+                    E-mail :
+                    <input type="email" name="email" placeholder="Votre E-mail" required>
+                    Dites-nous :
+                    <textarea rows="4" name="message" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+
+            </div>
+            
+            <div class="droit">
+                <p>&copy;2026 KoDesi. L'esthétique codée.<br> Tous droits réservés </p>
+            </div>
+
+        </footer>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="JS/responsive.js" async defer></script>
+    </body>
+</html>
