@@ -19,7 +19,7 @@
 /* =========================================
    STYLE MOBILE (Tablettes et Téléphones)
 ========================================= */
-@media (max-width >= 971px) {
+@media (max-width: 971px) {
     /* 1. On affiche le bouton Hamburger */
     .hamburger {
         display: block;
