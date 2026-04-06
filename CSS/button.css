@@ -14,11 +14,10 @@
 /* Initier hover */
 .Initier {
   position: relative;
-  color: var(--orange);
   font-family: Courgette, cursive;
   padding: 15px 30px;
   border: 2px solid var(--blue); /* Bordure translucide */
-  color: var(--blue);
+  color: var(--blue); /* Couleur initiale du texte */
   background: hsla(0, 0%, 100%, 0.05); /* Fond très léger (Glassmorphism) */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);          /* Flou d'arrière-plan */
