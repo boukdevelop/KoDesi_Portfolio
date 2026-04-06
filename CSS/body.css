@@ -1,20 +1,21 @@
 html,body {
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
     width: 100%;
     height: 100%;
+    overflow-x: hidden; /* Bloque tout débordement horizontal → fixe le layout viewport mobile */
 }
 
 body{
     position: relative;
     padding-top: 70px; /*Décale le contenu pour ne pas chevaucher le header fixe */
-    min-height: 100vh; /* Suppression de height:100vh qui bloquait le scroll */
+    min-height: 100vh;
     display: grid;
     /* background: linear-gradient(to left, var(--blue), var(--orange)); */
     background: linear-gradient(var(--grandiant-angle), var(--blue), var(--orange));
     animation: spin 8s linear infinite;
-    grid-template-rows: 1fr auto; /* header est fixed donc hors flux : seulement contenu + footer */
+    height: 100vh;
+    grid-template-rows: auto 1fr auto; /* header, contenu, footer */
 }
 
 @keyframes spin {
@@ -90,7 +91,7 @@ header nav a{
     text-decoration: none; /* On enlève le soulignement par défaut */
     padding: 5px 0;
     color: var(--text);
-    font-weight: bold; /* Corrigé : font: bold est invalide en shorthand */
+    font: bold;
     font-size: x-large;
 }
 
@@ -242,7 +243,6 @@ LA FENÊTRE D'ACCORD
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 9999;
-    display: flex; /* Corrigé : manquait pour que justify-content et align-items fonctionnent */
     justify-content: center;
     align-items: center;
 }
