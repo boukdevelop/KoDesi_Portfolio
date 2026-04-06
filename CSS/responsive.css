@@ -4,7 +4,7 @@
     cursor: pointer;
     background: none;
     border: none;
-    z-index: 1001; /* Très important : le bouton doit rester au-dessus du menu */
+    z-index: 1001;
 }
 
 .hamburger .bar {
@@ -12,7 +12,7 @@
     width: 25px;
     height: 3px;
     margin: 8px auto;
-    background-color: var(--text); /* Utilise ta variable ou une couleur claire */
+    background-color: var(--text);
     transition: all 0.3s ease-in-out;
 }
 
@@ -20,70 +20,81 @@
    STYLE MOBILE (Tablettes et Téléphones)
 ========================================= */
 @media (max-width: 971px) {
+
+    /* ==========================
+    GLOBAL — Racine du problème de header
+    ========================== */
+
+    /* Empêche tout élément de déborder horizontalement.
+       C'est ce qui déréglait le layout viewport et rendait 
+       le header plus étroit sur index/manifesto vs les autres pages. */
+    * {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
     /* 1. On affiche le bouton Hamburger */
     .hamburger {
         display: block;
     }
 
-    /* 3. On transforme le menu en panneau latéral futuriste */
+    /* Menu panneau latéral */
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%; /* Caché hors écran à droite */
-        width: 60%; /* Le menu prend 60% de l'écran */
+        right: -100%;
+        width: 60%;
         height: 60vh;
-        background: linear-gradient(60deg, var(--blue), var(--orange)); /* Ton bleu avec de la transparence */
+        background: linear-gradient(60deg, var(--blue), var(--orange));
         -webkit-backdrop-filter: blur(15px);
-        backdrop-filter: blur(15px); /* L'effet verre dépoli */
+        backdrop-filter: blur(15px);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); /* Animation fluide */
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
         z-index: 1000;
         border-radius: 80px;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5); /* Ombre pour détacher le menu du fond */
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
     }
 
     .nav-menu ul {
-        flex-direction: column; /* Les liens s'empilent */
+        flex-direction: column;
         gap: 40px;
         text-align: center;
     }
 
-    /* 4. LA CLASSE MAGIQUE (ajoutée par le JS) */
     .nav-menu.active {
-        right: 0; /* Le menu glisse vers la gauche pour apparaître */
+        right: 0;
     }
 
-    /* 5. Animation du Hamburger en Croix (X) */
     .hamburger.is-active .bar:nth-child(2) { 
-        opacity: 0; /* La barre du milieu disparaît */
+        opacity: 0;
     }
     .hamburger.is-active .bar:nth-child(1) { 
-        transform: translateY(8px) rotate(45deg); /* Barre du haut s'incline */
+        transform: translateY(8px) rotate(45deg);
     }
     .hamburger.is-active .bar:nth-child(3) { 
-        transform: translateY(-8px) rotate(-45deg); /* Barre du bas s'incline */
+        transform: translateY(-8px) rotate(-45deg);
     }
 
 
     /* ==========================
-    PAGE ACCEUIL (index.html)
+    PAGE ACCUEIL (index.html)
     ========================== */
 
     #index {
-        display: flex;
+        display: flex;          /* CORRIGÉ : était commenté, flex-direction column n'avait aucun effet */
         flex-direction: column;
+        padding: 5% 4%;
     }
 
-    /* Grille Oblique */
     .content-right {
         justify-content: center;
-        transform: rotate(-90deg) skewY(10deg); /* L'inclinaison "Netflix" */
+        padding-left: 0;        /* CORRIGÉ : était 50%, causait un débordement horizontal massif */
+        transform: rotate(-90deg) skewY(10deg);
     }
 
-    /* Les carrés gris */
     .box {
         width: 120px;
         height: 180px;
@@ -91,17 +102,8 @@
         background: rgba(200, 200, 200, 0.2);
         border-radius: 12px;
         -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px); /* Petit effet glassmorphism en bonus */
+        backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    #index {
-        padding-bottom: 100%;
-    }
-
-    .content-right {
-        padding-top: 100%;
-        padding-bottom: 100%;
     }
 
     .img {
@@ -111,38 +113,64 @@
     }
 
     .column-scroll {
-    gap: 20px;
-    animation: scrollVertical 20s linear infinite;
+        gap: 20px;
+        animation: scrollVertical 20s linear infinite;
     }
 
     .column-scroll.reverse {
         animation: scrollVertical 25s linear infinite reverse;
     }
 
-    /* L'Animation de défilement */
     @keyframes scrollVertical {
         0% { transform: translateY(0); }
         100% { transform: translateY(-100%); } 
     }
 
+
     /* ==========================
     PAGE MANIFESTO (manifesto.html)
     ========================== */
 
-    /* Le conteneur parent (optionnel si vous l'avez déjà stylisé) */
+    .manifesto-h1 {
+        font-size: 2.8rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .manifesto-h3 {
+        font-size: 1.3rem;
+        margin-left: 15px;      /* CORRIGÉ : était 70px, poussait le texte hors écran */
+        margin-right: 15px;
+        margin-top: -20px;
+    }
+
     .sous-contenair-manifesto {
         flex-direction: column;
         align-items: center;
+        margin: 15px;
     }
 
-    /* Le "carton" du manifesto */
     .design-manifesto, .code-manifesto {
         width: 100%;
     }
 
+
     /* ==========================
     PAGE PROJETS (projets.html)
     ========================== */
+
+    .projets-h1 {
+        font-size: 2.8rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .projets-h3 {
+        font-size: 1.3rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     .projet-list {
         flex-direction: column;
         align-items: center;
@@ -152,25 +180,70 @@
         width: 90%;
     }
 
+
     /* ==========================
     PAGE STACK (stack.html)
     ========================== */
 
-    .sous-contenair-stack {
-        flex-direction: column;
+    .stack-h1 {
+        font-size: 2.8rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
-    .design-stack ,.code-stack {
+    .stack-h4 {
+        font-size: 1.3rem;
+        margin-left: 15px;      /* CORRIGÉ : était 70px, débordement */
+        margin-right: 15px;
+        margin-top: -20px;
+    }
+
+    .sous-contenair-stack {
+        flex-direction: column;
+        margin: 15px;           /* CORRIGÉ : réduit pour rester dans le viewport */
+    }
+
+    .design-stack, .code-stack {
         width: 100%;
     }
+
 
     /* ==========================
     PAGE L'ALCHIMISTE (propos.html)
     ========================== */
 
     #propos {
-    flex-direction: column;
+        flex-direction: column;
+        margin: 20px;           /* CORRIGÉ : était 100px sur les 4 côtés, débordement total */
     }
+
+    .text-propos {
+        margin-left: 0;         /* CORRIGÉ : supprime le margin-left: 50px du desktop */
+        margin-top: 30px;
+    }
+
+    .text-propos h1 {
+        font-size: 2rem;
+    }
+
+    .text-propos h2 {
+        font-size: 1.3rem;
+    }
+
+    .text-propos h4 {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .rotating-badge {
+        right: 0;               /* CORRIGÉ : était -50px, débordait de 50px à droite */
+        bottom: -20px;
+    }
+
+
+    /* ==========================
+    FOOTER
+    ========================== */
 
     .footer-content {
         align-items: center;
