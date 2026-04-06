@@ -73,14 +73,13 @@
     ========================== */
 
     #index {
-        /* display: flex; */
+        display: flex;
         flex-direction: column;
     }
 
     /* Grille Oblique */
     .content-right {
         justify-content: center;
-        padding-left: 50%;
         transform: rotate(-90deg) skewY(10deg); /* L'inclinaison "Netflix" */
     }
 
