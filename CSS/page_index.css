@@ -39,6 +39,7 @@
 
 /* Grille Oblique */
 .content-right {
+    z-index: -1;
     position: relative;
     padding-top: 5%; /* Corrigé : 40% était trop agressif et poussait le contenu sous le footer */
     height: 50%; /* Plus haut pour couvrir l'angle de rotation */
