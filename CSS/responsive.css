@@ -134,6 +134,25 @@
         100% { transform: translateY(-100%); } 
     }
 
+    .content-left h1{
+        font-size: 2.2rem;
+    }
+
+    .content-left h3{
+        font-size: 1rem;   
+    }
+
+    .Dle, .GitHub{
+        text-align: center;
+        font-size: 1rem;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .bouton-drow{
+        margin: 4px;
+    }
+
 
     /* ==========================
     PAGE MANIFESTO (manifesto.html)

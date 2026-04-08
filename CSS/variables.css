@@ -1,5 +1,5 @@
 :root {
-    --blue: #233D4C;
+    --blue: #233e4d;
     --orange: #FD802E;
     --orangeclair: rgba(253, 129, 46, 0.548);
     --white : #E9DAD5;
@@ -18,3 +18,7 @@
     --card-bg: #FFFFFF;
     --text-primary: #E9DAD5;
 }
+
+
+/* --blue: #233e4d;
+    --orange: #FD802E; */
