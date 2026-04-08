@@ -78,7 +78,15 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    .logo, .Initier {
+        font-size: 1rem;
+    }
 
+    .Initier {
+        padding: 4%;
+    }
+
+    
     /* ==========================
     PAGE ACCUEIL (index.html)
     ========================== */
@@ -132,13 +140,13 @@
     ========================== */
 
     .manifesto-h1 {
-        font-size: 2.8rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        font-size: 2rem;      /* CORRIGÉ : 5rem débordait sur mobile */
         margin-left: 10px;
         margin-right: 10px;
     }
 
     .manifesto-h3 {
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin-left: 15px;      /* CORRIGÉ : était 70px, poussait le texte hors écran */
         margin-right: 15px;
         margin-top: -20px;
@@ -154,6 +162,13 @@
         width: 100%;
     }
 
+    .sous-contenair-manifesto h3{
+        font-size: 1.5rem;
+    }
+
+    .sous-contenair-manifesto h4 {
+        font-size: 0.8rem;
+    }
 
     /* ==========================
     PAGE PROJETS (projets.html)
@@ -186,13 +201,13 @@
     ========================== */
 
     .stack-h1 {
-        font-size: 2.8rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        font-size: 2rem;      /* CORRIGÉ : 5rem débordait sur mobile */
         margin-left: 10px;
         margin-right: 10px;
     }
 
     .stack-h4 {
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin-left: 15px;      /* CORRIGÉ : était 70px, débordement */
         margin-right: 15px;
         margin-top: -20px;
@@ -205,6 +220,14 @@
 
     .design-stack, .code-stack {
         width: 100%;
+    }
+
+    .tete h3 {
+        font-size: 1.5rem;
+    }
+
+    .stack-board em, .stack-board1 em {
+        font-size: 0.8rem;
     }
 
 
@@ -238,6 +261,7 @@
     .rotating-badge {
         right: 0;               /* CORRIGÉ : était -50px, débordait de 50px à droite */
         bottom: -20px;
+        font-size: 1rem;
     }
 
 

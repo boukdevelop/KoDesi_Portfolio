@@ -27,7 +27,7 @@
 
 /* Layout Principal */
 .container-all {
-    display: grid;
+    display: flex;
     gap: 20px;
     grid-template-columns: 1.2fr 1fr; /* 1.2 pour le texte, 1 pour la grille */
     align-items: center;
