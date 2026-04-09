@@ -1,8 +1,8 @@
 :root {
-    --blue: #233e4d;
-    --orange: #FD802E;
-    --orangeclair: rgba(253, 129, 46, 0.548);
-    --white : #E9DAD5;
+    --blue: #00DF82;
+    --orange: #03624C;
+    --orangeclair: #2CC295;
+    --white : #F8FBFF;
     --glass : rgba(255, 255, 255, 0.05);
     --text : #E0E0E0;
 }
@@ -19,6 +19,11 @@
     --text-primary: #E9DAD5;
 }
 
-
-/* --blue: #233e4d;
-    --orange: #FD802E; */
+/* :root {
+    --blue: #233e4d;
+    --orange: #FD802E;
+    --orangeclair: rgba(253, 129, 46, 0.548);
+    --white : #E9DAD5;
+    --glass : rgba(255, 255, 255, 0.05);
+    --text : #E0E0E0;
+} */

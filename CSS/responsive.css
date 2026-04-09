@@ -95,6 +95,7 @@
         display: flex;          /* CORRIGÉ : était commenté, flex-direction column n'avait aucun effet */
         flex-direction: column;
         padding: 5% 4%;
+        min-height: 80vh;
     }
 
     .content-right {
@@ -151,6 +152,37 @@
 
     .bouton-drow{
         margin: 4px;
+    }
+
+    /* Grille Oblique */
+    .content-right {
+        transform: none; /* L'inclinaison "Netflix" */
+    }
+
+    .grid-oblique {
+        flex-direction: column;
+    }
+
+    .column-scroll {
+        flex-direction: row;
+        animation: scrollVertical 15s linear infinite alternate-reverse;
+    }
+
+    .column-scroll.reverse {
+        animation: scrollVertical 10s linear infinite alternate;
+    }
+
+    /* L'Animation de défilement */
+    @keyframes scrollVertical {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(50%); } 
+    }
+
+    /* Les carrés gris */
+    .box {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
     }
 
 
