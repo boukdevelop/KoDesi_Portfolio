@@ -1,10 +1,10 @@
 :root {
-    --blue: #00DF82;
-    --orange: #03624C;
+    --blue: #024751;
+    --orange: #00D47E;
     --orangeclair: #2CC295;
-    --white : #F8FBFF;
+    --white : #EDFFF8;
     --glass : rgba(255, 255, 255, 0.05);
-    --text : #E0E0E0;
+    --text : #FFF0B5;
 }
 
 @property --grandiant-angle{
