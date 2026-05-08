@@ -1,10 +1,21 @@
 :root {
-    --blue: #0F1717;
-    --orange: #1A2424;
-    --orangeclair: #EFC8C8;
-    --white : #E0E0E0;
-    --glass : rgba(255, 255, 255, 0.05);
-    --text : #8A9A9A;
+    /* Fond profond (Anciennement --blue) */
+    --blue: #080A0C;
+    
+    /* Surface des cartes/sections (Anciennement --orange) */
+    --orange: #12151A;
+    
+    /* Couleur d'accentuation Violet/Néon (Anciennement --orangeclair) */
+    --orangeclair: #A855F7; 
+    
+    /* Texte principal brillant (Anciennement --white) */
+    --white : #F8FAFC;
+    
+    /* Effet de verre plus subtil */
+    --glass : rgba(255, 255, 255, 0.03);
+    
+    /* Texte secondaire/paragraphes (Anciennement --text) */
+    --text : #94A3B8;
 }
 
 @property --grandiant-angle{
