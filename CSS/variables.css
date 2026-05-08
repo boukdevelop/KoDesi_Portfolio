@@ -14,8 +14,7 @@
     /* Effet Glassmorphism : Plus pur et cristallin */
     --glass : rgba(0, 255, 157, 0.03);
     
-    /* Texte secondaire : Gris minéral pour la douceur */
-    --text : #8B9A9A;
+    --text : #8B9A9A;  /* Un gris moyen pour les sous-titres */
 }
 
 @property --grandiant-angle{
