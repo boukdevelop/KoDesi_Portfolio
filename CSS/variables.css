@@ -1,21 +1,21 @@
 :root {
-    /* Fond profond (Anciennement --blue) */
-    --blue: #080A0C;
+    /* Fond principal : Un noir émeraude très profond */
+    --blue: #050808;
     
-    /* Surface des cartes/sections (Anciennement --orange) */
-    --orange: #12151A;
+    /* Sections et cartes : Pour créer du relief */
+    --orange: #0D1212;
     
-    /* Couleur d'accentuation Violet/Néon (Anciennement --orangeclair) */
-    --orangeclair: #A855F7; 
+    /* Couleur d'accent : Un vert émeraude électrique (très tendance) */
+    --orangeclair: #00FF9D; 
     
-    /* Texte principal brillant (Anciennement --white) */
-    --white : #F8FAFC;
+    /* Texte principal : Blanc givré pour un contraste net */
+    --white : #F0F5F5;
     
-    /* Effet de verre plus subtil */
-    --glass : rgba(255, 255, 255, 0.03);
+    /* Effet Glassmorphism : Plus pur et cristallin */
+    --glass : rgba(0, 255, 157, 0.03);
     
-    /* Texte secondaire/paragraphes (Anciennement --text) */
-    --text : #94A3B8;
+    /* Texte secondaire : Gris minéral pour la douceur */
+    --text : #8B9A9A;
 }
 
 @property --grandiant-angle{
