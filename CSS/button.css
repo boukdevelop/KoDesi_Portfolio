@@ -6,8 +6,8 @@
   }
   to {
     opacity: 1;
-    text-shadow: 0 0 10px var(--blue), 
-                 0 0 20px var(--text);
+    text-shadow: 0 0 10px var(--header), 
+                 0 0 20px var(--footer);
   }
 }
 
@@ -16,8 +16,8 @@
   position: relative;
   font-family: Courgette, cursive;
   padding: 15px 30px;
-  border: 2px solid var(--blue); /* Bordure translucide */
-  color: var(--blue); /* Couleur initiale du texte */
+  border: 2px solid var(--text-primary); /* Bordure translucide */
+  color: var(--text-primary); /* Couleur initiale du texte */
   background: hsla(0, 0%, 100%, 0.05); /* Fond très léger (Glassmorphism) */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);          /* Flou d'arrière-plan */
@@ -45,7 +45,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--blue);
+  background: var(--text-primary);
   z-index: -1;
   transition: top 0.4s cubic-bezier(0.5, 1, 0.89, 1);
 }
@@ -67,7 +67,7 @@
 
 .logo{
   border-radius: 8px; /* La forme ronde */
-  color: var(--text);
+  color: var(--text-primary);
   background: var(--glass);
   /* background: linear-gradient(to right, var(--blue), var(--orange)); */
   
@@ -85,7 +85,7 @@
 
 /* Boutton de la page d'acceuil : index.html */
 .GitHub, .Dle{
-  background: var(--orange);
+  background: var(--active);
   padding: 30px;
   text-decoration: none;
   border-radius: 50px;
@@ -99,8 +99,8 @@
 }
 
 .GitHub:hover, .Dle:hover{
-  color: var(--orange);
-  background: var(--blue);
+  color: var(--active);
+  background: var(--text-primary);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
               0 0 20px rgba(255, 255, 255, 0.5);
 }

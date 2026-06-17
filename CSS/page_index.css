@@ -1,24 +1,24 @@
 /* Les differents textes */
 .content-left h1{
     font-family: "Lilita One";
-    color: var(--text);
+    color: var(--text-primary);
     font-size: 7em;
 }
 
 .content-left h3{
     font-family: Courgette;
-    color: var(--text);
-    font-size: 2em;   
+    color: var(--text-primary);
+    font-size: 2em;
 }
 
 .Dle, .GitHub{
     font-family: Courgette;
-    color: var(--blue);
+    color: var(--text-secondary);
     font-size: 2em;
 }
 
 .content-left strong{
-    background: linear-gradient(45deg, var(--orange), var(--blue));
+    background: linear-gradient(45deg, var(--header), var(--footer));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -66,9 +66,9 @@
 
 /* Les carrés gris */
 .box {
-    object-fit: cover;
+    /* object-fit: cover; */
     width: 180px;
-    height: 120px;
+    height: 190px;
     background: rgba(200, 200, 200, 0.2);
     border-radius: 12px;
     -webkit-backdrop-filter: blur(10px);
@@ -81,7 +81,7 @@
 .box-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 /* L'Animation de défilement */
