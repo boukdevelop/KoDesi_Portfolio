@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html>
     <%- include('partials/head') %>
-    <body>
+<body>
 
-        <%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-        <!-- element -->
+  <main class="page-content">
+    <!-- element -->
         <div class="container-all" id="manifesto">
             <h1 class="manifesto-h1">
                 Là où le Pixel rencontre la Syntaxe.
@@ -34,10 +35,13 @@
 
         </div>
 
-        <%- include('partials/footer') %>
+  </main>
 
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="/JS/responsive.js" async defer></script>
-        <script src="/JS/navigation.js" async defer></script>
-    </body>
+  <%- include('partials/footer') %>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="/JS/responsive.js" async defer></script>
+    <script src="/JS/navigation.js" async defer></script>
+</body>
 </html>

@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
     <%- include('partials/head') %>
-
     <body>
-
         <%- include('partials/header') %>
 
-        <div class="main-container">
-            <!-- Formulaire d'inscription -->
-            <form id="inscriptionIA" action="/inscription" method="POST">
-                <div class="img-container">
-                    <img class="img-ia" src="/assets/images/formation_v2.png" alt="Formation IA">
-                </div>
-               
-                <h2>Rejoindre la Formation IA</h2>
-
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        <main class="page-content">
+            <div class="main-container">
+                <!-- Formulaire d'inscription -->
+                <form id="inscriptionIA" action="/inscription" method="POST">
+                    <div class="img-container">
+                        <img class="img-ia" src="/assets/images/formation_v2.png" alt="Formation IA">
+                    </div>
                 
-                <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    <h2>Rejoindre la Formation IA</h2>
 
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
-                
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="3" placeholder="Un mot sur vos motivations..." required></textarea>
-                
-                <button type="submit">S'inscrire</button>
-            </form>
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
-            <!-- Zone dynamique où les cartes d'inscription apparaîtront -->
-            <div id="listeInscriptions"></div>
-        </div>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+                    
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Un mot sur vos motivations..." required></textarea>
+                    
+                    <button type="submit">S'inscrire</button>
+                </form>
 
-        <script src="/JS/formation.js" async defer></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="/JS/navigation.js" async defer></script>
+                <!-- Zone dynamique où les cartes d'inscription apparaîtront -->
+                <div id="listeInscriptions"></div>
+            </div>
 
+            <script src="/JS/formation.js" async defer></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            <script src="/JS/navigation.js" async defer></script>
+
+        </main>
+
+        <%- include('partials/footer') %>
     </body>
 </html>

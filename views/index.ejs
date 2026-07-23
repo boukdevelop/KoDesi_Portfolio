@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
     <%- include('partials/head') %>
-    <body>
+<body>
+  <%- include('partials/header') %>
 
-        <%- include('partials/header') %>
-
-        <!-- element -->
+  <main class="page-content">
+    <!-- element -->
         <div class="container-all" id="index">
 
             <!-- Contenair de gauche -->
@@ -45,12 +45,12 @@
             </div>
             
         </div>
+        
+  </main>
 
-
-    <%- include('partials/footer') %>
-
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="/JS/responsive.js" async defer></script>
-        <script src="/JS/navigation.js" async defer></script>
-    </body>
+  <%- include('partials/footer') %>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="/JS/responsive.js" async defer></script>
+    <script src="/JS/navigation.js" async defer></script>
+</body>
 </html>
