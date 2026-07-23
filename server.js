@@ -49,6 +49,14 @@ app.get('/propos', (req, res) => {
 });
 
 
-app.listen(port, () => {
+// app.listen(port, () => {
+//    console.log(`Serveur démarré sur http://localhost:${port}`);
+//});
+
+if (require.main === module) {
+  app.listen(port, () => {
     console.log(`Serveur démarré sur http://localhost:${port}`);
-})
+  });
+}
+
+module.exports = app;
