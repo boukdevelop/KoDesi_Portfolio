@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <%- include('partials/head') %>
+    <body>
+
+        <%- include('partials/header') %>
+
+        <!-- element -->
+        <div class="container-all" id="index">
+
+            <!-- Contenair de gauche -->
+            <div class="content-left">
+                <h1>
+                    L'esthétique <strong>Codée</strong>.<br> Le pixel <strong>sculpté</strong>.
+                </h1>
+                <h3>
+                    Studio de création hybride fusionnant le design graphique stratégique et le développement web de haute précision.
+                </h3>
+
+                <!-- Bouttons d'explorations -->
+                <div class="bouton-drow">
+                    <a class="Dle" href="#">
+                        Découvrez les expériences
+                    </a>
+                    <a class="GitHub" href="https://github.com/boukdevelop">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Contenair de gauche : Fichiers déroulants -->
+            <div class="content-right">
+                <div class="grid-oblique">
+                    <div class="column-scroll reverse">
+                        <div class="box"> <img class="box-img" src="/assets/images/poster.jpg" alt="Emballages de jus natuel"> </div>
+                        <div class="box"> <img class="box-img"  src="/assets/images/digital_E.png" alt="Affiche publicitaire"> </div>
+                        <div class="box"> <img class="box-img"  src="/assets/images/digit_excell3.png" alt="Affiche publicitaire pour cours"> </div>
+                        <div class="box"> <img class="box-img"  src="/assets/images/MOI.jpg" alt="Photo de moi"> </div>
+                    </div>
+                    <div class="column-scroll">
+                        <div class="box"> <img class="box-img"  src="/assets/images/1.png" alt="Portfolio"> </div>
+                        <div class="box"> <img class="box-img" src="/assets/images/2.png" alt="Portfolio"> </div>
+                        <div class="box"> <img class="box-img"  src="/assets/images/graphique_designer_BBFG.png" alt="Graphique Designer"> </div>
+                        <div class="box"> <img class="box-img" src="/assets/images/Juice_poster.png" alt="Jus d'hibiscus"> </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    <%- include('partials/footer') %>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="/JS/responsive.js" async defer></script>
+        <script src="/JS/navigation.js" async defer></script>
+    </body>
+</html>

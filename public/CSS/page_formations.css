@@ -1,0 +1,198 @@
+        /* Palette de couleurs & Réinitialisation */
+        :root {
+            --bg: #222B31;
+            --header: #440101;
+            --footer: #222B31;
+            --text-primary: #E22227;
+            --text-secondary: #55666E;
+            --active: #C7080C;
+            --card: #6C0102;
+            --glass: rgba(255, 255, 255, 0.05);
+            --text: #E0E0E0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            box-sizing: border-box;
+        }
+
+        /* Conteneur principal centré et éloigné du header */
+        .main-container {
+            width: 100%;
+            max-width: 480px;
+            /* margin-top à 120px pour bien l'éloigner du header, 'auto' pour centrer horizontalement */
+            margin: 120px auto 60px auto; 
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 25px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /* Conteneur pour centrer l'image */
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px; /* Espace sous l'image */
+}
+
+/* Style de l'image */
+.img-ia {
+    max-width: 150px; /* Adaptez la largeur souhaitée */
+    height: auto;
+    display: block;
+    border-radius: 12px; /* Coins arrondis */
+}
+
+        /* Formulaire moderne */
+        #inscriptionIA {
+            width: 100%;
+            padding: 35px;
+            background: linear-gradient(145deg, #2a353c, #1a2126);
+            border: 1px solid rgba(226, 34, 39, 0.25);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(226, 34, 39, 0.1);
+            box-sizing: border-box;
+        }
+
+        #inscriptionIA h2 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        #inscriptionIA label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        #inscriptionIA input,
+        #inscriptionIA textarea {
+            width: 100%;
+            margin-bottom: 18px;
+            padding: 12px 14px;
+            background-color: #161c20;
+            border: 1.5px solid var(--text-secondary);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #ffffff;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        #inscriptionIA input:focus,
+        #inscriptionIA textarea:focus {
+            outline: none;
+            border-color: var(--text-primary);
+            box-shadow: 0 0 10px rgba(226, 34, 39, 0.35);
+        }
+
+        #inscriptionIA button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--text-primary), var(--active));
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(226, 34, 39, 0.3);
+        }
+
+        #inscriptionIA button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(226, 34, 39, 0.5);
+            background: linear-gradient(135deg, #f32d32, var(--text-primary));
+        }
+
+        /* Zone d'affichage des inscriptions sous le formulaire */
+        #listeInscriptions {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Cartes d'enregistrement dynamiques */
+        .card-inscription {
+            background: linear-gradient(135deg, var(--header), var(--card));
+            border-left: 4px solid var(--text-primary);
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass);
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+
+        .badge {
+            background-color: var(--text-primary);
+            color: #ffffff;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .card-body p {
+            margin: 4px 0;
+            font-size: 0.88rem;
+        }
+
+        .card-body .email-text {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-style: italic;
+        }
+
+        .card-body .message-text {
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 2px solid var(--text-secondary);
+            color: var(--text);
+        }
+
+        /* Animation d'apparition smooth */
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: translateY(-15px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
