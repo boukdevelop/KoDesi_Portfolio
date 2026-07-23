@@ -6,6 +6,8 @@ html,body {
 }
 
 body{
+    margin: 0;
+    padding: 0;
     position: relative;
     padding-top: 70px; /*Décale le contenu pour ne pas chevaucher le header fixe */
     min-height: 100vh;

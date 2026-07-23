@@ -1,37 +1,35 @@
 // 1. Initialisation de mon controle de mail
-(function(){
-    // Ta clé publique est correcte
+if (window.emailjs) {
     emailjs.init('T80cOP5zlvBPktghp');
-})();
-
+}
 
 // On sélectionne les éléments dans le HTML
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
-// 1. Fonction pour ouvrir/fermer le menu au clic sur le hamburger
-hamburger.addEventListener('click', () => {
-    // Bascule les classes d'animation
-    hamburger.classList.toggle('is-active');
-    navMenu.classList.toggle('active');
-    
-    // Gère l'accessibilité (pour les lecteurs d'écran)
-    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.setAttribute('aria-expanded', !isOpen);
-});
+if (hamburger && navMenu) {
+    // 1. Fonction pour ouvrir/fermer le menu au clic sur le hamburger
+    hamburger.addEventListener('click', () => {
+        // Bascule les classes d'animation
+        hamburger.classList.toggle('is-active');
+        navMenu.classList.toggle('active');
 
-// 2. BONUS PRO : Fermer le menu si on clique sur un lien
-// Très important pour l'expérience utilisateur, surtout si tu as des ancres (#projets)
-const navLinks = document.querySelectorAll('.nav-menu a');
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        // Retire les classes actives pour forcer la fermeture
-        hamburger.classList.remove('is-active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
+        // Gère l'accessibilité (pour les lecteurs d'écran)
+        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isOpen);
     });
-});
+
+    // 2. BONUS PRO : Fermer le menu si on clique sur un lien
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('is-active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
 // ==================
 //     FORMULAIRE
