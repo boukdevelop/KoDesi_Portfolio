@@ -7,3 +7,25 @@ Excellente question ! En tant qu'informaticien ET graphiste designer, tu as une 
 **Animations** : Combine l'effet machine à écrire sur le hero (pour impressionner sur le côté dev) + des blob morphing et des gradients animés comme accents visuels (pour le côté graphiste). Garde les transitions UI rapides (0.3s) et réserve les animations longues aux éléments décoratifs.
 
 Ton atout principal est justement ta double compétence — ton portfolio doit le montrer clairement : un code propre + un design soigné dans le même site, c'est ta signature.
+
+```txt
+portfolio/
+├─ package.json
+├─ server.js
+├─ public/
+│  ├─ CSS/
+│  │  ├─ variables.css
+│  │  ├─ button.css
+│  │  ├─ body.css
+│  │  ├─ page_index.css
+│  │  ├─ responsive.css
+│  ├─ JS/
+│  └─ assets/
+├─ views/
+│  ├─ partials/
+│  │  ├─ header.ejs
+│  │  └─ footer.ejs
+│  ├─ index.ejs
+│  └─ formation.ejs
+```
+
