@@ -4,7 +4,7 @@
 
 // Remplace ces valeurs par celles de ton projet Supabase (Settings > API)
 const supabaseUrl = 'https://dalnxsrbjduqynggvwej.supabase.co';
-const supabaseKey = 'dalnxsrbjduqynggvwej';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhbG54c3JiamR1cXluZ2d2d2VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxMTU0NDksImV4cCI6MjEwMDY5MTQ0OX0.8orbQDLrhuEAqZ4TKLYiTob81F1HJlQVATsOJMg7jrQ';
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 const form = document.getElementById('inscriptionIA');
