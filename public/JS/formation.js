@@ -16,9 +16,9 @@ const container = document.getElementById('listeInscriptions');
 
 // Cette fonction va chercher les inscrits dans la base de données quand la page s'ouvre
 async function chargerInscriptions() {
-    // Récupère les données de la table "candidatures", triées par date (les plus récentes en premier)
+    // Récupère les données de la table "candidature", triées par date (les plus récentes en premier)
     const { data, error } = await supabase
-        .from('candidatures')
+        .from('candidature')
         .select('*')
         .order('created_at', { ascending: false });
 
@@ -79,7 +79,7 @@ if (form) {
         try {
             // ÉTAPE A : Sauvegarder dans la base de données Supabase
             const { error: dbError } = await supabase
-                .from('candidatures')
+                .from('candidature')
                 .insert([
                     { nom: nom, prenom: prenom, email: email, motivation: message }
                 ]);
