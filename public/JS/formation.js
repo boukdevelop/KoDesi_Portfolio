@@ -19,14 +19,15 @@ async function chargerInscriptions() {
     // Récupère les données de la table "candidature", triées par date (les plus récentes en premier)
     const { data, error } = await supabase
         .from('candidature')
-        .select('*')
-        .order('created_at', { ascending: false });
+        .select('*');
+        // .order('created_at', { ascending: false });
 
     if (error) {
         console.error("Erreur lors du chargement des données:", error);
         return;
     }
 
+    if (!data) return;
     // Vide le conteneur avant de le remplir pour éviter les doublons
     container.innerHTML = '';
 
