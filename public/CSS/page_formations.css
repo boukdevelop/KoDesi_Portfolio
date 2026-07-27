@@ -11,20 +11,19 @@
             --text: #E0E0E0;
         }
 
-
-        /* Conteneur principal centré et éloigné du header */
-        .main-container {
-            width: 100%;
-            max-width: 480px;
-            /* margin-top à 120px pour bien l'éloigner du header, 'auto' pour centrer horizontalement */
-            margin: 120px auto 60px auto; 
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 25px;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
+/* Conteneur principal centré et éloigné du header */
+.main-container {
+    width: 100%;
+    max-width: 480px;
+    /* margin-top à 120px pour bien l'éloigner du header, 'auto' pour centrer horizontalement */
+    margin: 120px auto 60px auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
         /* Conteneur pour centrer l'image */
 .img-container {

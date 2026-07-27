@@ -116,25 +116,25 @@
         display: block;
     }
 
-    /* Menu panneau latéral */
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 60%;
-        height: 60vh;
-        background: linear-gradient(60deg, var(--blue), var(--orange));
-        -webkit-backdrop-filter: blur(15px);
-        backdrop-filter: blur(15px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 1000;
-        border-radius: 80px;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-    }
+/* Menu panneau latéral */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 60vh;
+    background: linear-gradient(60deg, var(--blue), var(--orange));
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1000;
+    border-radius: 80px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+}
 
     .nav-menu ul {
         flex-direction: column;
@@ -265,17 +265,17 @@
 
 
     /* ==========================
-    PAGE MANIFESTO (manifesto.html)
+    PAGE MANIFESTO (manifesto.ejs)
     ========================== */
 
     .manifesto-h1 {
-        font-size: 2rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        font-size: 0.6rem;      /* CORRIGÉ : 5rem débordait sur mobile */
         margin-left: 10px;
         margin-right: 10px;
     }
 
     .manifesto-h3 {
-        font-size: 1rem;
+        font-size: 0.5rem;
         margin-left: 15px;      /* CORRIGÉ : était 70px, poussait le texte hors écran */
         margin-right: 15px;
         margin-top: -20px;
@@ -300,17 +300,17 @@
     }
 
     /* ==========================
-    PAGE PROJETS (projets.html)
+    PAGE PROJETS (projets.ejs)
     ========================== */
 
     .projets-h1 {
-        font-size: 2.8rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        font-size: 1.1rem;      /* CORRIGÉ : 5rem débordait sur mobile */
         margin-left: 10px;
         margin-right: 10px;
     }
 
     .projets-h3 {
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -330,7 +330,7 @@
     ========================== */
 
     .stack-h1 {
-        font-size: 2rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        font-size: 1.2rem;      /* CORRIGÉ : 5rem débordait sur mobile */
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -349,10 +349,11 @@
 
     .design-stack, .code-stack {
         width: 100%;
+        background: var(--card);
     }
 
     .tete h3 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .stack-board em, .stack-board1 em {

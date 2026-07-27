@@ -2,19 +2,19 @@
 .content-left h1{
     font-family: "Lilita One";
     color: var(--text-primary);
-    font-size: 7em;
+    font-size: 5em;
 }
 
 .content-left h3{
     font-family: Courgette;
     color: var(--text-primary);
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .Dle, .GitHub{
     font-family: Courgette;
     color: var(--text-secondary);
-    font-size: 2em;
+    font-size: 1.2em;
 }
 
 .content-left strong{
