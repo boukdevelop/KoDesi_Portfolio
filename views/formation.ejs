@@ -29,12 +29,18 @@
                     <button type="submit">S'inscrire</button>
                 </form>
 
-                <!-- Zone dynamique où les cartes d'inscription apparaîtront -->
+                <!-- Zone dynamique -->
                 <div id="listeInscriptions"></div>
             </div>
 
-            <script src="/JS/formation.js" async defer></script>
+            <!-- 1. Script Supabase (Base de données) -->
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            
+            <!-- 2. Script EmailJS (Notifications) -->
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            
+            <!-- 3. Ton script principal -->
+            <script src="/JS/formation.js" async defer></script>
             <script src="/JS/navigation.js" async defer></script>
 
         </main>

@@ -1,77 +1,43 @@
+// ==========================================
+// CONFIGURATION SUPABASE ET EMAILJS
+// ==========================================
 
-// ==================
-//     FORMULAIRE
-// ==================
+// Remplace ces valeurs par celles de ton projet Supabase (Settings > API)
+const supabaseUrl = 'https://dalnxsrbjduqynggvwej.supabase.co/rest/v1/candidature';
+const supabaseKey = 'dalnxsrbjduqynggvwej';
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 const form = document.getElementById('inscriptionIA');
+const container = document.getElementById('listeInscriptions');
 
-if (form) {
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+// ==========================================
+// 1. CHARGER LES DONNÉES AU DÉMARRAGE
+// ==========================================
 
-        emailjs.sendForm('service_su191k6', 'template_w3ch8tv', this)
-        .then(function() {
-            // 1. CRÉATION DYNAMIQUE DU HTML
-            const modalOverlay = document.createElement('div');
-            modalOverlay.id = 'success-modal';
-            modalOverlay.className = 'modal-overlay';
-            modalOverlay.style.display = 'flex'; // On l'affiche direct
+// Cette fonction va chercher les inscrits dans la base de données quand la page s'ouvre
+async function chargerInscriptions() {
+    // Récupère les données de la table "candidatures", triées par date (les plus récentes en premier)
+    const { data, error } = await supabase
+        .from('candidatures')
+        .select('*')
+        .order('created_at', { ascending: false });
 
-            modalOverlay.innerHTML = `
-                <div class="modal-content">
-                    <div class="icon-check">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h2>Rapport Envoyé !</h2>
-                    <p>Merci, et à bientôt !</p>
-                    <button id="close-modal" class="btn-confirm">D'accord</button>
-                </div>
-            `;
+    if (error) {
+        console.error("Erreur lors du chargement des données:", error);
+        return;
+    }
 
-            // 2. AJOUT AU BODY
-            document.body.appendChild(modalOverlay);
-            form.reset();
+    // Vide le conteneur avant de le remplir pour éviter les doublons
+    container.innerHTML = '';
 
-            // 3. LOGIQUE DE SUPPRESSION (AU CLIC)
-            modalOverlay.addEventListener('click', function(event) {
-                // Si on clique sur le bouton "D'accord" OU sur le fond noir
-                if (event.target.id === 'close-modal' || event.target === modalOverlay) {
-                    modalOverlay.remove(); // Supprime complètement le HTML du DOM
-                }
-            });
-
-        }, function(error) {
-            alert("Erreur lors de l'envoi : " + JSON.stringify(error));
-            console.error("Erreur lors de l'envoie", error());
-        });
+    // Boucle sur chaque inscrit de la base de données et crée une carte
+    data.forEach(inscrit => {
+        afficherCarte(inscrit.nom, inscrit.prenom, inscrit.email, inscrit.motivation);
     });
 }
 
-// emailjs.send("service_su191k6","template_w3ch8tv",{
-//     title: "Merci je te vois",
-//     name: "Boukala",
-//     message: "Je suis heureux de savoir que mon code prends parfaitement bien",
-//     email: "boukalafranck@gamil.com",
-// });
-// Merci, ceci est mon premier site et pour cela je suis heureux de vous présenter le mail envoyé via mon site et l'aide d'EmailJS...
-
-
-// ====================
-// VERIFICATIONS INSC
-// ====================
-document.getElementById('inscriptionIA').addEventListener('submit', function(e) {
-    // Intercepte le rechargement automatique pour afficher le rendu immédiat
-    e.preventDefault();
-
-    const nom = document.getElementById('nom').value.trim();
-    const prenom = document.getElementById('prenom').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!nom || !prenom || !email || !message) return;
-
-    // Création du bloc de résultat
-    const container = document.getElementById('listeInscriptions');
+// Fonction utilitaire pour générer le HTML d'une carte (réutilisable)
+function afficherCarte(nom, prenom, email, message) {
     const card = document.createElement('div');
     card.className = 'card-inscription';
 
@@ -81,14 +47,92 @@ document.getElementById('inscriptionIA').addEventListener('submit', function(e) 
             <span class="badge">Inscrit(e)</span>
         </div>
         <div class="card-body">
-            <p class="email-text">✉️ ${email}ss</p>
+            <p class="email-text">✉️ ${email}</p>
             <p class="message-text">💬 ${message}</p>
         </div>
     `;
+    
+    // Insère la carte à la fin de la liste (car elles sont déjà triées par Supabase)
+    container.appendChild(card);
+}
 
-    // Insère la nouvelle carte au sommet de la liste
-    container.prepend(card);
+// Lancer le chargement dès que le script est lu
+chargerInscriptions();
 
-    // Réinitialise le formulaires
-    this.reset();
-});
+// ==========================================
+// 2. GÉRER LA SOUMISSION DU FORMULAIRE
+// ==========================================
+
+if (form) {
+    // Un seul événement 'submit' qui gère tout !
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        // Récupération des valeurs
+        const nom = document.getElementById('nom').value.trim();
+        const prenom = document.getElementById('prenom').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!nom || !prenom || !email || !message) return;
+
+        try {
+            // ÉTAPE A : Sauvegarder dans la base de données Supabase
+            const { error: dbError } = await supabase
+                .from('candidatures')
+                .insert([
+                    { nom: nom, prenom: prenom, email: email, motivation: message }
+                ]);
+
+            if (dbError) throw dbError; // S'il y a une erreur, on passe dans le "catch" en bas
+
+            // ÉTAPE B : Envoyer l'email via EmailJS
+            await emailjs.sendForm('service_su191k6', 'template_w3ch8tv', this);
+
+            // ÉTAPE C : Mettre à jour l'interface visuelle (succès)
+            
+            // 1. On recharge la liste depuis la base de données (pour afficher le nouveau)
+            chargerInscriptions(); 
+            
+            // 2. On affiche ta modale de succès
+            afficherModaleSucces();
+
+            // 3. On vide le formulaire
+            form.reset();
+
+        } catch (error) {
+            alert("Une erreur est survenue. Veuillez réessayer.");
+            console.error("Erreur complète :", error);
+        }
+    });
+}
+
+// ==========================================
+// 3. LOGIQUE DE LA MODALE
+// ==========================================
+
+function afficherModaleSucces() {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.id = 'success-modal';
+    modalOverlay.className = 'modal-overlay';
+    modalOverlay.style.display = 'flex';
+
+    modalOverlay.innerHTML = `
+        <div class="modal-content">
+            <div class="icon-check">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Rapport Envoyé !</h2>
+            <p>Merci, et à bientôt !</p>
+            <button id="close-modal" class="btn-confirm">D'accord</button>
+        </div>
+    `;
+
+    document.body.appendChild(modalOverlay);
+
+    modalOverlay.addEventListener('click', function(event) {
+        if (event.target.id === 'close-modal' || event.target === modalOverlay) {
+            modalOverlay.remove();
+        }
+    });
+}
