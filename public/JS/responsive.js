@@ -1,88 +1,114 @@
-// 1. Initialisation de mon controle de mail
-if (window.emailjs) {
-    emailjs.init('T80cOP5zlvBPktghp');
-}
+function initResponsiveMenu() {
+    if (window.emailjs) {
+        window.emailjs.init('T80cOP5zlvBPktghp');
+    }
 
-// On sélectionne les éléments dans le HTML
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
 
-if (hamburger && navMenu) {
-    // 1. Fonction pour ouvrir/fermer le menu au clic sur le hamburger
-    hamburger.addEventListener('click', () => {
-        // Bascule les classes d'animation
-        hamburger.classList.toggle('is-active');
-        navMenu.classList.toggle('active');
+    if (!hamburger || !navMenu) {
+        return;
+    }
 
-        // Gère l'accessibilité (pour les lecteurs d'écran)
+    const closeMenu = () => {
+        hamburger.classList.remove('is-active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    };
+
+    const openMenu = () => {
         const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !isOpen);
+        hamburger.classList.toggle('is-active', !isOpen);
+        navMenu.classList.toggle('active', !isOpen);
+        hamburger.setAttribute('aria-expanded', String(!isOpen));
+    };
+
+    hamburger.addEventListener('click', (event) => {
+        event.stopPropagation();
+        openMenu();
     });
 
-    // 2. BONUS PRO : Fermer le menu si on clique sur un lien
-    const navLinks = document.querySelectorAll('.nav-menu a');
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('is-active');
-            navMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-        });
+    document.addEventListener('click', (event) => {
+        if (!navMenu.classList.contains('active')) return;
+        const clickedInsideMenu = navMenu.contains(event.target);
+        const clickedOnHamburger = hamburger.contains(event.target);
+        if (!clickedInsideMenu && !clickedOnHamburger) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 971) {
+            closeMenu();
+        }
     });
 }
 
-// ==================
-//     FORMULAIRE
-// ==================
+function initContactForm() {
+    const form = document.getElementById('formulaire');
 
-const form = document.getElementById('formulaire');
+    if (!form) {
+        return;
+    }
 
-if (form) {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        emailjs.sendForm('service_su191k6', 'template_w3ch8tv', this)
-        .then(function() {
-            // 1. CRÉATION DYNAMIQUE DU HTML
-            const modalOverlay = document.createElement('div');
-            modalOverlay.id = 'success-modal';
-            modalOverlay.className = 'modal-overlay';
-            modalOverlay.style.display = 'flex'; // On l'affiche direct
+        if (!window.emailjs) {
+            alert('Le service de contact n\'est pas disponible pour le moment.');
+            return;
+        }
 
-            modalOverlay.innerHTML = `
-                <div class="modal-content">
-                    <div class="icon-check">
-                        <i class="fas fa-check-circle"></i>
+        window.emailjs.sendForm('service_su191k6', 'template_w3ch8tv', this)
+            .then(function() {
+                const modalOverlay = document.createElement('div');
+                modalOverlay.id = 'success-modal';
+                modalOverlay.className = 'modal-overlay';
+                modalOverlay.style.display = 'flex';
+
+                modalOverlay.innerHTML = `
+                    <div class="modal-content">
+                        <div class="icon-check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Rapport Envoyé !</h2>
+                        <p>Merci, tes données ont été transmises au laboratoire.</p>
+                        <button id="close-modal" class="btn-confirm">D'accord</button>
                     </div>
-                    <h2>Rapport Envoyé !</h2>
-                    <p>Merci, tes données ont été transmises au laboratoire.</p>
-                    <button id="close-modal" class="btn-confirm">D'accord</button>
-                </div>
-            `;
+                `;
 
-            // 2. AJOUT AU BODY
-            document.body.appendChild(modalOverlay);
-            form.reset();
+                document.body.appendChild(modalOverlay);
+                form.reset();
 
-            // 3. LOGIQUE DE SUPPRESSION (AU CLIC)
-            modalOverlay.addEventListener('click', function(event) {
-                // Si on clique sur le bouton "D'accord" OU sur le fond noir
-                if (event.target.id === 'close-modal' || event.target === modalOverlay) {
-                    modalOverlay.remove(); // Supprime complètement le HTML du DOM
-                }
+                modalOverlay.addEventListener('click', function(event) {
+                    if (event.target.id === 'close-modal' || event.target === modalOverlay) {
+                        modalOverlay.remove();
+                    }
+                });
+
+            }, function(error) {
+                alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
+                console.error('Erreur lors de l\'envoie', error);
             });
-
-        }, function(error) {
-            alert("Erreur lors de l'envoi : " + JSON.stringify(error));
-            console.error("Erreur lors de l'envoie", error());
-        });
     });
 }
 
-// emailjs.send("service_su191k6","template_w3ch8tv",{
-//     title: "Merci je te vois",
-//     name: "Boukala",
-//     message: "Je suis heureux de savoir que mon code prends parfaitement bien",
-//     email: "boukalafranck@gamil.com",
-// });
-// Merci, ceci est mon premier site et pour cela je suis heureux de vous présenter le mail envoyé via mon site et l'aide d'EmailJS...
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        initResponsiveMenu();
+        initContactForm();
+    });
+} else {
+    initResponsiveMenu();
+    initContactForm();
+}
