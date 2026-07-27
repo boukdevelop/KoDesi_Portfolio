@@ -3,7 +3,7 @@
 // ==========================================
 
 // Remplace ces valeurs par celles de ton projet Supabase (Settings > API)
-const supabaseUrl = 'https://dalnxsrbjduqynggvwej.supabase.co/rest/v1/candidature';
+const supabaseUrl = 'https://dalnxsrbjduqynggvwej.supabase.co';
 const supabaseKey = 'dalnxsrbjduqynggvwej';
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
