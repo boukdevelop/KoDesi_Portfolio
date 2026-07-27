@@ -44,7 +44,7 @@ function afficherCarte(nom, prenom, email, message) {
 
     card.innerHTML = `
         <div class="card-header">
-            <h3>${prenom}</h3>
+            <h3>${prenom} ${nom}</h3>
             <span class="badge">Inscrit(e)</span>
         </div>
         <div class="card-body">
@@ -85,7 +85,11 @@ if (form) {
                     { nom: nom, prenom: prenom, email: email, motivation: message }
                 ]);
 
-            if (dbError) throw dbError; // S'il y a une erreur, on passe dans le "catch" en bas
+            // S'il y a une erreur, on passe dans le "catch" en bas
+            if (dbError) {
+                console.error("Erreur exacte de Supabase :", dbError.message);
+                throw dbError;
+            }
 
             // ÉTAPE B : Envoyer l'email via EmailJS
             await emailjs.sendForm('service_su191k6', 'template_w3ch8tv', this);
