@@ -22,15 +22,93 @@
 @media (max-width: 971px) {
 
     /* ==========================
-    GLOBAL — Racine du problème de header
+    GLOBAL — Réorganisation du layout
     ========================== */
 
-    /* Empêche tout élément de déborder horizontalement.
-       C'est ce qui déréglait le layout viewport et rendait 
-       le header plus étroit sur index/manifesto vs les autres pages. */
     * {
         box-sizing: border-box;
         max-width: 100%;
+    }
+
+    body {
+        padding-top: 90px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    main,
+    .page-content,
+    .container-all {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .container-all {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1rem 3rem;
+        min-height: auto;
+        gap: 1.5rem;
+    }
+
+    .content-left,
+    .content-right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .content-left h1 {
+        font-size: clamp(2.2rem, 7vw, 3.2rem);
+        line-height: 1.1;
+    }
+
+    .content-left h3 {
+        font-size: clamp(1rem, 3.5vw, 1.3rem);
+        line-height: 1.5;
+    }
+
+    .bouton-drow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .Dle,
+    .GitHub {
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+    }
+
+    .content-right {
+        padding-top: 0;
+        transform: none;
+    }
+
+    .grid-oblique {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .column-scroll {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        animation: none;
+    }
+
+    .column-scroll.reverse {
+        animation: none;
+    }
+
+    .box {
+        width: min(110px, 32vw);
+        height: min(125px, 36vw);
+        flex-shrink: 0;
     }
 
     /* 1. On affiche le bouton Hamburger */

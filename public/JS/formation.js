@@ -68,11 +68,11 @@ function afficherCarte(nom, prenom, email, message) {
 
     card.innerHTML = `
         <div class="card-header">
-            <h3>${prenom} ${nom}</h3>
+            <h3>${prenom}</h3>
             <span class="badge">Inscrit(e)</span>
         </div>
         <div class="card-body">
-            <p class="email-text">✉️ ${email}</p>
+            <p class="email-text">✉️ Kodesi${email}</p>
             <p class="message-text">💬 ${message}</p>
         </div>
     `;

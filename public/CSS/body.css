@@ -18,6 +18,7 @@ body{
     animation: spin 8s linear infinite;
     height: 100vh;
     grid-template-rows: auto 1fr auto; /* header, contenu, footer */
+    overflow-x: hidden;
 }
 
 main {
