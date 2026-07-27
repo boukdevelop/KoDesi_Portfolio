@@ -2,43 +2,67 @@
 // CONFIGURATION SUPABASE
 // ==========================================
 
-// Remplace ces valeurs par celles de ton projet Supabase (Settings > API)
 const supabaseUrl = 'https://dalnxsrbjduqynggvwej.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhbG54c3JiamR1cXluZ2d2d2VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxMTU0NDksImV4cCI6MjEwMDY5MTQ0OX0.8orbQDLrhuEAqZ4TKLYiTob81F1HJlQVATsOJMg7jrQ';
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-const form = document.getElementById('inscriptionIA');
-const container = document.getElementById('listeInscriptions');
+let container = null;
+
+async function supabaseRequest(path, options = {}) {
+    const headers = {
+        apikey: supabaseKey,
+        Authorization: `Bearer ${supabaseKey}`,
+        'Content-Type': 'application/json',
+        ...(options.headers || {})
+    };
+
+    const response = await fetch(`${supabaseUrl}${path}`, {
+        ...options,
+        headers
+    });
+
+    const responseText = await response.text();
+    let data = null;
+
+    try {
+        data = responseText ? JSON.parse(responseText) : null;
+    } catch (error) {
+        data = responseText;
+    }
+
+    if (!response.ok) {
+        const message = data?.message || response.statusText || 'La requête Supabase a échoué';
+        return { data: null, error: new Error(message) };
+    }
+
+    return { data, error: null };
+}
 
 // ==========================================
 // 1. CHARGER LES DONNÉES AU DÉMARRAGE
 // ==========================================
 
-// Cette fonction va chercher les inscrits dans la base de données quand la page s'ouvre
 async function chargerInscriptions() {
-    // Récupère les données de la table "candidature", triées par date (les plus récentes en premier)
-    const { data, error } = await supabase
-        .from('candidature')
-        .select('*');
-        // .order('created_at', { ascending: false });
+    if (!container) return;
+
+    const { data, error } = await supabaseRequest('/rest/v1/candidature?select=*');
 
     if (error) {
-        console.error("Erreur lors du chargement des données:", error);
+        console.error('Erreur lors du chargement des données :', error);
         return;
     }
 
-    if (!data) return;
-    // Vide le conteneur avant de le remplir pour éviter les doublons
+    if (!Array.isArray(data)) return;
+
     container.innerHTML = '';
 
-    // Boucle sur chaque inscrit de la base de données et crée une carte
     data.forEach(inscrit => {
         afficherCarte(inscrit.nom, inscrit.prenom, inscrit.email, inscrit.motivation);
     });
 }
 
-// Fonction utilitaire pour générer le HTML d'une carte (réutilisable)
 function afficherCarte(nom, prenom, email, message) {
+    if (!container) return;
+
     const card = document.createElement('div');
     card.className = 'card-inscription';
 
@@ -48,28 +72,25 @@ function afficherCarte(nom, prenom, email, message) {
             <span class="badge">Inscrit(e)</span>
         </div>
         <div class="card-body">
-            <p class="email-text">✉️ Kodesi${email}</p>
+            <p class="email-text">✉️ ${email}</p>
             <p class="message-text">💬 ${message}</p>
         </div>
     `;
-    
-    // Insère la carte à la fin de la liste (car elles sont déjà triées par Supabase)
+
     container.appendChild(card);
 }
 
-// Lancer le chargement dès que le script est lu
-chargerInscriptions();
+function initialiserFormulaire() {
+    const form = document.getElementById('inscriptionIA');
+    container = document.getElementById('listeInscriptions');
 
-// ==========================================
-// 2. GÉRER LA SOUMISSION DU FORMULAIRE
-// ==========================================
+    if (!form || !container) return;
 
-if (form) {
-    // Un seul événement 'submit' qui gère tout !
+    chargerInscriptions();
+
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
 
-        // Récupération des valeurs
         const nom = document.getElementById('nom').value.trim();
         const prenom = document.getElementById('prenom').value.trim();
         const email = document.getElementById('email').value.trim();
@@ -78,35 +99,34 @@ if (form) {
         if (!nom || !prenom || !email || !message) return;
 
         try {
-            // ÉTAPE A : Sauvegarder dans la base de données Supabase
-            const { error: dbError } = await supabase
-                .from('candidature')
-                .insert([
-                    { nom: nom, prenom: prenom, email: email, motivation: message }
-                ]);
+            const { error: dbError } = await supabaseRequest('/rest/v1/candidature', {
+                method: 'POST',
+                headers: {
+                    Prefer: 'return=representation'
+                },
+                body: JSON.stringify([
+                    { nom, prenom, email, motivation: message }
+                ])
+            });
 
-            // S'il y a une erreur, on passe dans le "catch" en bas
             if (dbError) {
-                console.error("Erreur exacte de Supabase :", dbError.message);
                 throw dbError;
             }
 
-            // ÉTAPE B : Mettre à jour l'interface visuelle (succès)
-            
-            // 1. On recharge la liste depuis la base de données (pour afficher le nouveau)
-            chargerInscriptions(); 
-            
-            // 2. On affiche ta modale de succès
+            await chargerInscriptions();
             afficherModaleSucces();
-
-            // 3. On vide le formulaire
             form.reset();
-
         } catch (error) {
-            alert("Une erreur est survenue. Veuillez réessayer.");
-            console.error("Erreur complète :", error);
+            alert('Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.');
+            console.error('Erreur complète :', error);
         }
     });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialiserFormulaire);
+} else {
+    initialiserFormulaire();
 }
 
 // ==========================================
