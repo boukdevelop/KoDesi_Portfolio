@@ -1,5 +1,5 @@
 // ==========================================
-// CONFIGURATION SUPABASE ET EMAILJS
+// CONFIGURATION SUPABASE
 // ==========================================
 
 // Remplace ces valeurs par celles de ton projet Supabase (Settings > API)
@@ -91,10 +91,7 @@ if (form) {
                 throw dbError;
             }
 
-            // ÉTAPE B : Envoyer l'email via EmailJS
-            await emailjs.sendForm('service_su191k6', 'template_w3ch8tv', this);
-
-            // ÉTAPE C : Mettre à jour l'interface visuelle (succès)
+            // ÉTAPE B : Mettre à jour l'interface visuelle (succès)
             
             // 1. On recharge la liste depuis la base de données (pour afficher le nouveau)
             chargerInscriptions(); 
