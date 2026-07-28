@@ -39,7 +39,6 @@
     main,
     .page-content,
     .container-all {
-        width: 100%;
         max-width: 100%;
     }
 
@@ -262,34 +261,34 @@
     ========================== */
 
     .manifesto-h1 {
-        font-size: 0.6rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        font-size: 1.9rem;      /* CORRIGÉ : 5rem débordait sur mobile */
         margin-left: 10px;
         margin-right: 10px;
     }
 
     .manifesto-h3 {
-        font-size: 0.5rem;
+        font-size: 1.2rem;
         margin-left: 15px;      /* CORRIGÉ : était 70px, poussait le texte hors écran */
         margin-right: 15px;
-        margin-top: -20px;
     }
 
     .sous-contenair-manifesto {
         flex-direction: column;
         align-items: center;
-        margin: 15px;
+        width: 100vh;
+    }
+    .sous-contenair-manifesto i{
+        width: 5px;
+        height: auto;
     }
 
-    .design-manifesto, .code-manifesto {
-        width: 100%;
+    .design-manifesto p, .code-manifesto p {
+        width: 100vh;
+        font-size: 0.8rem;
     }
 
     .sous-contenair-manifesto h3{
-        font-size: 1.5rem;
-    }
-
-    .sous-contenair-manifesto h4 {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     /* ==========================
@@ -297,13 +296,13 @@
     ========================== */
 
     .projets-h1 {
-        font-size: 1.1rem;      /* CORRIGÉ : 5rem débordait sur mobile */
+        font-size: 1.5rem;      /* CORRIGÉ : 5rem débordait sur mobile */
         margin-left: 10px;
         margin-right: 10px;
     }
 
     .projets-h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -342,7 +341,6 @@
 
     .design-stack, .code-stack {
         width: 100%;
-        background: var(--card);
     }
 
     .tete h3 {
