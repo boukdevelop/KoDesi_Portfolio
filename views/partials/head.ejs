@@ -1,0 +1,56 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio BOUKALA</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Images de prévisualisation -->
+     
+     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Portfolio BOUKALA">
+    <meta property="og:description" content="Studio de création hybride fusionnant design graphique et développement web">
+    <meta property="og:image" content="https://tonsite.com/assets/images/kodesi_logo.jpg">
+    <meta property="og:url" content="https://tonsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio BOUKALA">
+    <meta name="twitter:description" content="Studio de création hybride fusionnant design graphique et développement web">
+    <meta name="twitter:image" content="https://tonsite.com/assets/images/kodesi_logo.jpg">
+    
+    <link rel="stylesheet" href="/CSS/variables.css">
+    <link rel="stylesheet" href="/CSS/button.css">
+    <link rel="stylesheet" href="/CSS/body.css">
+    <link rel="stylesheet" href="/CSS/page_index.css">
+    <link rel="stylesheet" href="/CSS/page_projet.css">
+    <link rel="stylesheet" href="/CSS/page_propos.css">
+    <link rel="stylesheet" href="/CSS/page_manifesto.css">
+    <link rel="stylesheet" href="/CSS/page_stack.css">
+    <link rel="stylesheet" href="/CSS/page_formations.css">
+    <link rel="stylesheet" href="/CSS/responsive.css">
+ 
+    
+
+    <% if (typeof pageIcon !== 'undefined' && pageIcon) { %>
+        <link rel="icon" type="image/png" href="<%= pageIcon %>">
+        <meta property="og:title" content="<%= typeof ogTitle !== 'undefined' ? ogTitle : 'Portfolio BOUKALA' %>">
+        <meta property="og:description" content="<%= typeof ogDescription !== 'undefined' ? ogDescription : 'Studio de création hybride fusionnant design graphique et développement web' %>">
+        <meta property="og:url" content="<%= typeof ogUrl !== 'undefined' ? ogUrl : 'https://kodesi-portfolio.vercel.app' %>">
+        <meta name="twitter:title" content="<%= typeof twitterTitle !== 'undefined' ? twitterTitle : 'Portfolio BOUKALA' %>">
+        <meta name="twitter:description" content="<%= typeof twitterDescription !== 'undefined' ? twitterDescription : 'Studio de création hybride fusionnant design graphique et développement web' %>">
+        <meta name="twitter:image" content="<%= typeof twitterImage !== 'undefined' ? twitterImage : 'https://kodesi-portfolio.vercel.app/assets/images/kodesi_logo.jpg' %>">
+    <% } else { %>
+
+        <!-- Image en icône du site -->
+        <link rel="icon" type="image/png" href="/assets/images/kodesi_logo.png">
+        <link rel="shortcut icon" type="image/jpeg" href="/assets/icons/kodesi_logo.jpg">
+        <link rel="icon" type="image/jpeg" href="/assets/icons/kodesi_logo.jpg">
+
+    <% } %>
+
+</head>
+

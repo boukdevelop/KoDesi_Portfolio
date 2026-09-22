@@ -1,0 +1,25 @@
+:root {
+    --bg: #222B31;
+    --header: #440101;
+    --footer: #222B31;
+    --text-primary: #E22227;
+    --text-secondary: #55666E;
+    --active: #C7080C;
+    --card: #6C0102;
+    --glass: rgba(255, 255, 255, 0.05);
+    --text: #E22227;
+}
+
+@property --grandiant-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+[data-theme="light"] {
+    --bg: #55666E;
+    --header: #E22227;
+    --footer: #222B31;
+    --card-bg: #FFFFFF;
+    --text-primary: #222B31;
+}

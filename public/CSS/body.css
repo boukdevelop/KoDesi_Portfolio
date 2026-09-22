@@ -6,15 +6,27 @@ html,body {
 }
 
 body{
+    margin: 0;
+    padding: 0;
     position: relative;
     padding-top: 70px; /*Décale le contenu pour ne pas chevaucher le header fixe */
     min-height: 100vh;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     /* background: linear-gradient(to left, var(--bg), var(--footer)); */
     background: linear-gradient(var(--grandiant-angle),var(--bg), var(--footer));
     animation: spin 8s linear infinite;
     height: 100vh;
     grid-template-rows: auto 1fr auto; /* header, contenu, footer */
+    overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  position: relative;
 }
 
 @keyframes spin {
@@ -30,22 +42,10 @@ body{
     Arrier plan personnalisée
 ============================== */
 
-.BodyT {
-    position: fixed;
-    /* opacity: 0.5; */
-    top: 0;
-    left: 0;
-    object-fit: cover ;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
 /* le header */
 
 header{
     position: fixed;
-    background-color: var(--glass);
     top: 10px;
     border-radius: 100px;
     left: 8px;
@@ -61,7 +61,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
+    padding: 3px 3%;
     flex-direction: row;
     margin: 0 auto;
     width: 100%;

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head') %>
+    <body>
+
+        <%- include('partials/header') %>
+
+        <main class="page-content">
+            <!-- element -->
+            <div class="container-all" id="projets">
+                <h1 class="projets-h1">
+                    Expérimentations & Solutions.
+                </h1>
+                <h3 class="projets-h3">
+                    Rapports de Laboratoire sélectionné
+                </h3>
+
+                <!-- liste des projets -->
+
+                <div class="projet-list">
+
+                    <div class="projet-card">
+                        <div class="projet-img">
+                            <img src="/assets/images/Juice_poster.png" alt="Marketing Digital">
+                        </div>
+                        <div class="projet-content">
+                            <div class="projet-badges">
+                                <span class="badge">Graphisme / Design</span>
+                                <span class="badge">Freelance</span>
+                            </div>
+                            <h3>Marketing Digital</h3>
+                            <h5>Conception de flyers pour une entreprise spécialisée dans la vente de croquettes et de foléré.</h5>
+                            <a href="#Voir" class="projet-link">Voir le projet &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="projet-card">
+                        <div class="projet-img">
+                            <img src="/assets/images/photo_moi.jpg" alt="Retouche Photo">
+                        </div>
+                        <div class="projet-content">
+                            <div class="projet-badges">
+                                <span class="badge">Art Photographique</span>
+                            </div>
+                            <h3>Retouche photo</h3>
+                            <h5>Retouche et conception de portrait photo; embellissement de cadre photo.</h5>
+                            <a href="#Voir" class="projet-link">Voir le projet &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+       <%- include('partials/footer') %>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="/JS/responsive.js"></script>
+        <script src="/JS/navigation.js"></script>
+    </body>
+</html>
