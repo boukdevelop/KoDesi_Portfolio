@@ -1,6 +1,6 @@
 // 1. Initialisation de mon controle de mail
 (function(){
-    // Ta clé publique est correcte
+    // Clé publique
     emailjs.init('T80cOP5zlvBPktghp');
 })();
 
